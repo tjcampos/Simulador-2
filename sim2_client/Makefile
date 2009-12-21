@@ -1,7 +1,7 @@
 CC   = g++
 OBJ  = main.o ag.o sim.o point2d.o
 LINKOBJ  = $(OBJ)
-LIBS = -o3
+LIBS = -O3
 BIN  = sim_client
 CFLAGS = $(INCS)
 RM = rm -f

@@ -54,12 +54,15 @@ void Ag::randomize(){
 
 void Ag::newPop(){
 	int max = 0;
+	int sum = fitness[0];
 	int *tmp;
 
-	for (int i=1; i < nbots; i++)
+	for (int i=1; i < nbots; i++){
 		if (fitness[i] > fitness[max])
 			max = i;
-	cout << "Melhor: " << fitness[max] << endl;
+		sum += fitness[i];
+	}
+	cout << "Melhor: " << fitness[max] << " Media: " << sum/nbots << endl;
 	
 	tmp = cromossomos[max];
 	cromossomos[max] = cromossomos[0];
