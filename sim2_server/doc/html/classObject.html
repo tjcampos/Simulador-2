@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe Object</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe Object</h1><!-- doxytag: class="Object" -->
+<p><code>#include &lt;<a class="el" href="object_8h_source.html">object.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de Hierarquia para Object:</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classObject.gif" usemap="#Object_map" alt=""/>
+  <map id="Object_map" name="Object_map">
+<area href="classObstacle.html" alt="Obstacle" shape="rect" coords="0,56,62,80"/>
+<area href="classRobot.html" alt="Robot" shape="rect" coords="72,56,134,80"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classObject-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a0c6ece9de140714ae2185ea42760c51f">Object</a> (int id, Uint32 color, bool enable)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a67ba768895edfb1144357c6eb73a1067">setColor</a> (Uint32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Uint32&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a6731d0b1ab7e6113136962690dcd2d18">getColor</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a7ef64754f8708602b386ee09b43be992">getId</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#ae35f79637a919c86b93dd3488c03c613">setEnable</a> (bool enable)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a892a9777edcfdd0e064e5b44c781094a">getEnable</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#aaa843497df146afaa721577e582c8ed2">draw</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a75a0ba175f1f7b192bda2effb2416f7e">runStep</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s, int tick, list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;objects)=0</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Objeto de sumulacao, classe virtual pura. </p>
+
+<p>Definição na linha <a class="el" href="object_8h_source.html#l00021">21</a> do arquivo <a class="el" href="object_8h_source.html">object.h</a>.</p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a0c6ece9de140714ae2185ea42760c51f"></a><!-- doxytag: member="Object::Object" ref="a0c6ece9de140714ae2185ea42760c51f" args="(int id, Uint32 color, bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Object::Object </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Construtor da classe objeto, recebe como parametros: </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do objeto (nao pode ser duplicado e nao pode ser alterado posteriormente) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor do objeto em 0xRRGGBBAA </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>objeto ativo para simulacao e impressao na tela </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="object_8cpp_source.html#l00003">3</a> do arquivo <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="aaa843497df146afaa721577e582c8ed2"></a><!-- doxytag: member="Object::draw" ref="aaa843497df146afaa721577e582c8ed2" args="(Drawing &amp;s)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Object::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deve ser implementada de forma com que desenhe o objeto na tela, recebe s, uma interface para desenho. FUNCAO VIRTUAL PURA </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>classe que desenha os objetos na tela </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementado por <a class="el" href="classObstacle.html#a660193cb4c4a96061ccabac749a19030">Obstacle</a> e <a class="el" href="classRobot.html#a631c08fd3f05239cec83ab4be157416a">Robot</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6731d0b1ab7e6113136962690dcd2d18"></a><!-- doxytag: member="Object::getColor" ref="a6731d0b1ab7e6113136962690dcd2d18" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Uint32 Object::getColor </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Funcao que verifica a cor do objeto </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>cor do objeto em 0xRRGGBBAA </dd></dl>
+
+<p>Definição na linha <a class="el" href="object_8cpp_source.html#l00013">13</a> do arquivo <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a892a9777edcfdd0e064e5b44c781094a"></a><!-- doxytag: member="Object::getEnable" ref="a892a9777edcfdd0e064e5b44c781094a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Object::getEnable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica se o objeto esta ativo </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true se o objeto esta ativo para simulacao e impressao e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="object_8cpp_source.html#l00025">25</a> do arquivo <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ef64754f8708602b386ee09b43be992"></a><!-- doxytag: member="Object::getId" ref="a7ef64754f8708602b386ee09b43be992" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Object::getId </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Funcao que verifica o id do objeto </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>um inteiro com o id do objeto, o id e unico em cada objeto </dd></dl>
+
+<p>Definição na linha <a class="el" href="object_8cpp_source.html#l00017">17</a> do arquivo <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a75a0ba175f1f7b192bda2effb2416f7e"></a><!-- doxytag: member="Object::runStep" ref="a75a0ba175f1f7b192bda2effb2416f7e" args="(Drawing &amp;s, int tick, list&lt; Object * &gt; &amp;objects)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Object::runStep </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>tick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>objects</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deve executar uma etapa de simulacao, ou seja, movimentacao e deteccao de colisao, se necessario. FUNCAO VIRTUAL PURA </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>classe que desenha os objetos na tela </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tick</em>&nbsp;</td><td>duracao do frame atual </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>objects</em>&nbsp;</td><td>lista de objetos, para verificacao de colisao </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a67ba768895edfb1144357c6eb73a1067"></a><!-- doxytag: member="Object::setColor" ref="a67ba768895edfb1144357c6eb73a1067" args="(Uint32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::setColor </td>
+          <td>(</td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera a cor do objeto, parâmetro: </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor do objeto em 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="object_8cpp_source.html#l00009">9</a> do arquivo <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae35f79637a919c86b93dd3488c03c613"></a><!-- doxytag: member="Object::setEnable" ref="ae35f79637a919c86b93dd3488c03c613" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::setEnable </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ativa o objeto para impressao na tela e simulacao, parametros: </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>booleana, se true ativa o objeto, se false ignora-o </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="object_8cpp_source.html#l00021">21</a> do arquivo <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="object_8h_source.html">object.h</a></li>
+<li><a class="el" href="object_8cpp_source.html">object.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

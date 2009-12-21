@@ -1,0 +1,888 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe EventManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe EventManager</h1><!-- doxytag: class="EventManager" -->
+<p><code>#include &lt;<a class="el" href="eventmanager_8h_source.html">eventmanager.h</a>&gt;</code></p>
+
+<p><a href="classEventManager-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos Estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#adbf66164158c858632197ef3b82d7c19">runEvent</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc, int client=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDrawing.html">Drawing</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a706380fc09514fffd3a62d9fb0020e44">startSim</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td colspan="2"><h2>Métodos Protegidos Estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a69551589b77651d5c07e77b8543a6ec8">restart</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ae3adc629c564db759692ca73c5219d79">addRobot</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#af570ffe60aa009e2a8a1f2ec19c03767">addSensor</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a91701617819effdb2fb8d3f4848f251e">addObstacle</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#acf5ba77f39f97825d060277c4d27f5af">addInterrupt</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc, int client)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#abe2c62e2f52f79158f1c972ea03b2601">addTimeAlert</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc, int client)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a3ea9328536d396e280dc14fcaa5cef7c">delObject</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a7bec7c559611758ec006bdb5a9374d9b">delSensor</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a2701bbe074b6629b7347b9869666597a">delInterrupt</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc, int client)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a4a342b530b664bddd92d51a71eb95b3e">delTimeAlert</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc, int client)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a2b4320c3a37bb23e0480d5727a60f7b3">getRobot</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#af7d36b789299f143aa257c66912cc40f">getObstacle</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a65d871e97efd3d2a8aab8b1de285f7a9">getDetections</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a574d5d553941f8da49f9d4dd88174777">getSensor</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a1cb4f62d09ace037d07b2b2b8b9a4d66">getSimulation</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a9617e9309ac7e389a2a414a1dc43ac25">setRobot</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#aa4955ccb99a3e07d3f1a6a4a08203a6c">setObstacle</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#aaf6dcc858cb9790f291f861216f3a2c1">setSensor</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a3bb88eec5e7d65f823dd4d92de2ff83d">setSimulation</a> (stringstream &amp;evt, <a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;sc)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Classe que trata as mensagens recebidas pelo simulador, decodificando-as e executando a operacao desejada </p>
+
+<p>Definição na linha <a class="el" href="eventmanager_8h_source.html#l00022">22</a> do arquivo <a class="el" href="eventmanager_8h_source.html">eventmanager.h</a>.</p>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="acf5ba77f39f97825d060277c4d27f5af"></a><!-- doxytag: member="EventManager::addInterrupt" ref="acf5ba77f39f97825d060277c4d27f5af" args="(stringstream &amp;evt, SimCtrl &amp;sc, int client)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::addInterrupt </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adiciona o cliente na lista de interrupcoes de um robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente que enviou a mensagem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00753">753</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91701617819effdb2fb8d3f4848f251e"></a><!-- doxytag: member="EventManager::addObstacle" ref="a91701617819effdb2fb8d3f4848f251e" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::addObstacle </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adiciona um obstaculo na simulacao </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00385">385</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3adc629c564db759692ca73c5219d79"></a><!-- doxytag: member="EventManager::addRobot" ref="ae3adc629c564db759692ca73c5219d79" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::addRobot </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adiciona um robo na simulacao </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00489">489</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af570ffe60aa009e2a8a1f2ec19c03767"></a><!-- doxytag: member="EventManager::addSensor" ref="af570ffe60aa009e2a8a1f2ec19c03767" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::addSensor </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adiciona um sensor a um robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00448">448</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe2c62e2f52f79158f1c972ea03b2601"></a><!-- doxytag: member="EventManager::addTimeAlert" ref="abe2c62e2f52f79158f1c972ea03b2601" args="(stringstream &amp;evt, SimCtrl &amp;sc, int client)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::addTimeAlert </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Aciona um alerta quando o tempo especificado chegar </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente que enviou a mensagem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00797">797</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2701bbe074b6629b7347b9869666597a"></a><!-- doxytag: member="EventManager::delInterrupt" ref="a2701bbe074b6629b7347b9869666597a" args="(stringstream &amp;evt, SimCtrl &amp;sc, int client)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::delInterrupt </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Exclui um cliente da lista de avisos de um robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente que enviou a mensagem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00778">778</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ea9328536d396e280dc14fcaa5cef7c"></a><!-- doxytag: member="EventManager::delObject" ref="a3ea9328536d396e280dc14fcaa5cef7c" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::delObject </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Exclui um objeto da simulacao, pode ser um robo, obstaculo ou demais objetos </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00366">366</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bec7c559611758ec006bdb5a9374d9b"></a><!-- doxytag: member="EventManager::delSensor" ref="a7bec7c559611758ec006bdb5a9374d9b" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::delSensor </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Exclui um sensor de um robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00424">424</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a342b530b664bddd92d51a71eb95b3e"></a><!-- doxytag: member="EventManager::delTimeAlert" ref="a4a342b530b664bddd92d51a71eb95b3e" args="(stringstream &amp;evt, SimCtrl &amp;sc, int client)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::delTimeAlert </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Exclui um alerta de tempo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente que enviou a mensagem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00822">822</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65d871e97efd3d2a8aab8b1de285f7a9"></a><!-- doxytag: member="EventManager::getDetections" ref="a65d871e97efd3d2a8aab8b1de285f7a9" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string EventManager::getDetections </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Recebe a lista de deteccoes efetuada pelo simulador no frame atual </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>string a ser enviada pelo socket </dd></dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00165">165</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7d36b789299f143aa257c66912cc40f"></a><!-- doxytag: member="EventManager::getObstacle" ref="af7d36b789299f143aa257c66912cc40f" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string EventManager::getObstacle </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Checa parametros de um obstaculo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>string a ser enviada pelo socket </dd></dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00211">211</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b4320c3a37bb23e0480d5727a60f7b3"></a><!-- doxytag: member="EventManager::getRobot" ref="a2b4320c3a37bb23e0480d5727a60f7b3" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string EventManager::getRobot </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Checa parametros de um robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>string a ser enviada pelo socket </dd></dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00280">280</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a574d5d553941f8da49f9d4dd88174777"></a><!-- doxytag: member="EventManager::getSensor" ref="a574d5d553941f8da49f9d4dd88174777" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string EventManager::getSensor </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Recebe informacoes de um sensor </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>string a ser enviada pelo socket </dd></dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00083">83</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1cb4f62d09ace037d07b2b2b8b9a4d66"></a><!-- doxytag: member="EventManager::getSimulation" ref="a1cb4f62d09ace037d07b2b2b8b9a4d66" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string EventManager::getSimulation </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Recebe informacoes da simulacao </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>string a ser enviada pelo socket </dd></dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00662">662</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a69551589b77651d5c07e77b8543a6ec8"></a><!-- doxytag: member="EventManager::restart" ref="a69551589b77651d5c07e77b8543a6ec8" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::restart </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Remove todos os objetos, interrupcoes e interrupções e configura o tempo para zero </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00847">847</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbf66164158c858632197ef3b82d7c19"></a><!-- doxytag: member="EventManager::runEvent" ref="adbf66164158c858632197ef3b82d7c19" args="(stringstream &amp;evt, SimCtrl &amp;sc, int client=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string EventManager::runEvent </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>interpreta a string evt e executa a operacao desejada em sc </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem decodificada do evento </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controle da simulacao, para efetuar as acoes desejadas </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente que enviou a mensagem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00003">3</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4955ccb99a3e07d3f1a6a4a08203a6c"></a><!-- doxytag: member="EventManager::setObstacle" ref="aa4955ccb99a3e07d3f1a6a4a08203a6c" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::setObstacle </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera especificacoes de um obstaculo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00579">579</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9617e9309ac7e389a2a414a1dc43ac25"></a><!-- doxytag: member="EventManager::setRobot" ref="a9617e9309ac7e389a2a414a1dc43ac25" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::setRobot </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera configuracoes de um robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00528">528</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf6dcc858cb9790f291f861216f3a2c1"></a><!-- doxytag: member="EventManager::setSensor" ref="aaf6dcc858cb9790f291f861216f3a2c1" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::setSensor </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera especificacoes de um sensor </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00610">610</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bb88eec5e7d65f823dd4d92de2ff83d"></a><!-- doxytag: member="EventManager::setSimulation" ref="a3bb88eec5e7d65f823dd4d92de2ff83d" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::setSimulation </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera configuracoes globais da simulacao </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem recebida pelo simulador </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controlador de simulacao, onde serao aplicados os comandos desejados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00714">714</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a706380fc09514fffd3a62d9fb0020e44"></a><!-- doxytag: member="EventManager::startSim" ref="a706380fc09514fffd3a62d9fb0020e44" args="(stringstream &amp;evt, SimCtrl &amp;sc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDrawing.html">Drawing</a> * EventManager::startSim </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&nbsp;</td>
+          <td class="paramname"> <em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classSimCtrl.html">SimCtrl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>comando que inicializa o simulador, apos receber um stringstream </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>evt</em>&nbsp;</td><td>mensagem decodificada do evento </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sc</em>&nbsp;</td><td>controle da simulacao, para efetuar as acoes desejadas </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="eventmanager_8cpp_source.html#l00854">854</a> do arquivo <a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="eventmanager_8h_source.html">eventmanager.h</a></li>
+<li><a class="el" href="eventmanager_8cpp_source.html">eventmanager.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

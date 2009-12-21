@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe Drawing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe Drawing</h1><!-- doxytag: class="Drawing" -->
+<p><code>#include &lt;<a class="el" href="drawing_8h_source.html">drawing.h</a>&gt;</code></p>
+
+<p><a href="classDrawing-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#a9f4f54bd1de9d11b370ef30a44a01235">Drawing</a> (int realWidth=800, int realHeigth=600, int scrWidth=800, int scrHeigth=600, char *fontFile=(char *)&quot;./fonts/9x18.fnt&quot;, unsigned int fSize=9216, int cw=9, int ch=18)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#a88db8447bd39261ba7adbe2db0717d3c">clearScr</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#ae6254853f96f616561b33b4b3407bd7e">updateScr</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#adc0defbdba76a1226d67bc866e7e68e1">drawCircle</a> (const <a class="el" href="classPoint2d.html">Point2d</a> &amp;center, int size, Uint32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#a4017d16025c3db2a6976fcde15cc7ec5">drawPolygon</a> (<a class="el" href="classPoint2d.html">Point2d</a> vertices[], int nvertices, Uint32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#af76682f3ba0eafb8ec028755c01265a7">drawLine</a> (const <a class="el" href="classPoint2d.html">Point2d</a> &amp;ini, <a class="el" href="classPoint2d.html">Point2d</a> &amp;fim, Uint32 color)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDrawing.html#a623543d4018fe014056d15b3300078f5">drawText</a> (string text, <a class="el" href="classPoint2d.html">Point2d</a> pos, Uint32 color=0xffffffff)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Classe responsavel por tratar da parte grafica e prover funcoes para desenhar na tela </p>
+
+<p>Definição na linha <a class="el" href="drawing_8h_source.html#l00021">21</a> do arquivo <a class="el" href="drawing_8h_source.html">drawing.h</a>.</p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a9f4f54bd1de9d11b370ef30a44a01235"></a><!-- doxytag: member="Drawing::Drawing" ref="a9f4f54bd1de9d11b370ef30a44a01235" args="(int realWidth=800, int realHeigth=600, int scrWidth=800, int scrHeigth=600, char *fontFile=(char *)&quot;./fonts/9x18.fnt&quot;, unsigned int fSize=9216, int cw=9, int ch=18)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Drawing::Drawing </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>realWidth</em> = <code>800</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>realHeigth</em> = <code>600</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>scrWidth</em> = <code>800</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>scrHeigth</em> = <code>600</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>fontFile</em> = <code>(char*)&nbsp;&quot;./fonts/9x18.fnt&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>fSize</em> = <code>9216</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>cw</em> = <code>9</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ch</em> = <code>18</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Construtor da classe drawing recebe com parâmetro: </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>realWidth</em>&nbsp;</td><td>altura do mundo em centímetros </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>realHeigth</em>&nbsp;</td><td>largura do mundo em centímetros </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>scrWidth</em>&nbsp;</td><td>altura da tela em pixels </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>scrHeigth</em>&nbsp;</td><td>largura da tela em pixels </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fontFile</em>&nbsp;</td><td>ponteiro para arquivo de fontes </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fSize</em>&nbsp;</td><td>numero máximo de chars da fonte </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cw</em>&nbsp;</td><td>alttura do character </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ch</em>&nbsp;</td><td>largura do character </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00003">3</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="a88db8447bd39261ba7adbe2db0717d3c"></a><!-- doxytag: member="Drawing::clearScr" ref="a88db8447bd39261ba7adbe2db0717d3c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drawing::clearScr </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Remove todos os objetos desenhados </p>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00028">28</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc0defbdba76a1226d67bc866e7e68e1"></a><!-- doxytag: member="Drawing::drawCircle" ref="adc0defbdba76a1226d67bc866e7e68e1" args="(const Point2d &amp;center, int size, Uint32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drawing::drawCircle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPoint2d.html">Point2d</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>desenha um circulo na tela </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>center</em>&nbsp;</td><td>centro da circunferencia </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>raio da circunferencia </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor da circunferencia em 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00036">36</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af76682f3ba0eafb8ec028755c01265a7"></a><!-- doxytag: member="Drawing::drawLine" ref="af76682f3ba0eafb8ec028755c01265a7" args="(const Point2d &amp;ini, Point2d &amp;fim, Uint32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drawing::drawLine </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classPoint2d.html">Point2d</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>ini</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>fim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>desenha um poligono na tela </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ini</em>&nbsp;</td><td>vetor com as posições x dos vertices do poligono </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fim</em>&nbsp;</td><td>vetor com as posições y dos vertices do poligono </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor da circunferencia em 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00052">52</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4017d16025c3db2a6976fcde15cc7ec5"></a><!-- doxytag: member="Drawing::drawPolygon" ref="a4017d16025c3db2a6976fcde15cc7ec5" args="(Point2d vertices[], int nvertices, Uint32 color)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drawing::drawPolygon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a>&nbsp;</td>
+          <td class="paramname"> <em>vertices</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nvertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>desenha um poligono na tela </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vertices[]</em>&nbsp;</td><td>vetor com as posições dos vertices do poligono </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nvertices</em>&nbsp;</td><td>numero de vertices do poligono </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor da circunferencia em 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00040">40</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a623543d4018fe014056d15b3300078f5"></a><!-- doxytag: member="Drawing::drawText" ref="a623543d4018fe014056d15b3300078f5" args="(string text, Point2d pos, Uint32 color=0xffffffff)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drawing::drawText </td>
+          <td>(</td>
+          <td class="paramtype">string&nbsp;</td>
+          <td class="paramname"> <em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a>&nbsp;</td>
+          <td class="paramname"> <em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em> = <code>0xffffffff</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>imprime um texto na tela </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>text</em>&nbsp;</td><td>texto a ser impresso na tela </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>posicao do texto </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor do texto em 0xRRGGBBAA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00056">56</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6254853f96f616561b33b4b3407bd7e"></a><!-- doxytag: member="Drawing::updateScr" ref="ae6254853f96f616561b33b4b3407bd7e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drawing::updateScr </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>atualiza a tela para q todas as mudanças sejam exibidas </p>
+
+<p>Definição na linha <a class="el" href="drawing_8cpp_source.html#l00032">32</a> do arquivo <a class="el" href="drawing_8cpp_source.html">drawing.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="drawing_8h_source.html">drawing.h</a></li>
+<li><a class="el" href="drawing_8cpp_source.html">drawing.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

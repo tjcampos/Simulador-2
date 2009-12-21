@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de trigtable.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>trigtable.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef TRIGTABLE_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define TRIGTABLE_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;cstdlib&gt;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="preprocessor">#define DPI (float) (3.141592653589793*2)</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span>
+<a name="l00012"></a><a class="code" href="classTrigtable.html">00012</a> <span class="keyword">class </span><a class="code" href="classTrigtable.html">Trigtable</a> {
+<a name="l00013"></a>00013         <span class="keyword">private</span>:
+<a name="l00014"></a>00014                 <span class="keyword">static</span> <span class="keywordtype">bool</span> generated;
+<a name="l00015"></a>00015                 <span class="keyword">static</span> <span class="keywordtype">float</span> *sintable;
+<a name="l00016"></a>00016                 <span class="keyword">static</span> <span class="keywordtype">float</span> *costable;
+<a name="l00017"></a>00017         <span class="keyword">public</span>:
+<a name="l00021"></a>00021                 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classTrigtable.html#d32023bf94e26142d163c863bc1e0a19">generate</a>();
+<a name="l00027"></a>00027                 <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classTrigtable.html#9f98bf4c0580ad6cfb636253a40e387a">tsin</a>(<span class="keywordtype">int</span> x);
+<a name="l00033"></a>00033                 <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classTrigtable.html#01b9e5b855a9eaed7c63ca94d0074ca1">tcos</a>(<span class="keywordtype">int</span> x);
+<a name="l00034"></a>00034 };
+<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

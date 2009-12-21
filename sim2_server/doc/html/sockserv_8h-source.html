@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de sockserv.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>sockserv.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef SOCKSERV_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define SOCKSERV_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;sys/socket.h&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;netinet/in.h&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;sys/types.h&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;fcntl.h&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;netdb.h&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;netinet/tcp.h&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;netinet/in.h&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;arpa/inet.h&gt;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="keyword">using namespace </span>std;
+<a name="l00018"></a>00018 
+<a name="l00022"></a><a class="code" href="classSockServ.html">00022</a> <span class="keyword">class </span><a class="code" href="classSockServ.html">SockServ</a>{
+<a name="l00023"></a>00023         <span class="keyword">private</span>:
+<a name="l00024"></a>00024                 <span class="keywordtype">int</span> sock;
+<a name="l00025"></a>00025                 list&lt;int&gt; clients;
+<a name="l00026"></a>00026                 <span class="keyword">struct </span>sockaddr_in serv_addr;
+<a name="l00027"></a>00027                 list&lt;int&gt;::iterator recvClient;
+<a name="l00028"></a>00028         <span class="keyword">protected</span>:
+<a name="l00033"></a>00033                 <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#09d35a0e546fc36ef7a8b98d569afbcf">stop</a>(<span class="keywordtype">int</span> socket);
+<a name="l00040"></a>00040                 <span class="keywordtype">int</span> <a class="code" href="classSockServ.html#9db92507b709e508d634bee2913c31aa">receive</a>(<span class="keywordtype">int</span> socket, <span class="keywordtype">char</span> msg[]);
+<a name="l00046"></a>00046                 <span class="keywordtype">bool</span> <a class="code" href="classSockServ.html#9799649cf054a9361d5df4caa5ee0050">isActive</a>(<span class="keywordtype">int</span> client);
+<a name="l00047"></a>00047         <span class="keyword">public</span>:
+<a name="l00052"></a>00052                 <a class="code" href="classSockServ.html#9868a23b78ec5eba35547e583835ba00">SockServ</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port = 6703);
+<a name="l00056"></a>00056                 <a class="code" href="classSockServ.html#18b87a413bac01b49e89f7d616a14da8">~SockServ</a>();
+<a name="l00061"></a>00061                 <span class="keywordtype">bool</span> <a class="code" href="classSockServ.html#c8a4cc7e224b1785212a6fdcd5e3c554">acceptClient</a>();
+<a name="l00065"></a>00065                 <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#6c8dfc479d51481695b51aabcfd17957">stopAll</a>();
+<a name="l00069"></a>00069                 <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#072ec8cfba44f8d011eb6edaeaa591f6">recvStart</a>();
+<a name="l00075"></a>00075                 <span class="keywordtype">string</span> <a class="code" href="classSockServ.html#13d32b33ca20bb3ba15e9dababbeaaf2">recvNext</a>(<span class="keywordtype">int</span> *clientId = NULL);
+<a name="l00080"></a>00080                 <span class="keywordtype">bool</span> <a class="code" href="classSockServ.html#f19b5064294dec828d01af563e3b7878">hasNext</a>();
+<a name="l00086"></a>00086                 <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#dbc9ec753e7f43ab157fe5f81c777f79">sends</a>(<span class="keywordtype">string</span> &amp;msg, <span class="keywordtype">int</span> client);
+<a name="l00091"></a>00091                 <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#50811643fbece8832b5962ac96c63c53">sendAll</a>(<span class="keywordtype">string</span> &amp;s);
+<a name="l00092"></a>00092 };
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

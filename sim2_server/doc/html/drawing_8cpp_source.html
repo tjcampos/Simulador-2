@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Código-Fonte de drawing.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>drawing.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;drawing.h&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="classDrawing.html#a9f4f54bd1de9d11b370ef30a44a01235">00003</a> <a class="code" href="classDrawing.html#a9f4f54bd1de9d11b370ef30a44a01235">Drawing::Drawing</a>(<span class="keywordtype">int</span> realWidth, <span class="keywordtype">int</span> realHeigth, <span class="keywordtype">int</span> scrWidth, <span class="keywordtype">int</span> scrHeigth, <span class="keywordtype">char</span> *fontFile, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fSize, <span class="keywordtype">int</span> cw, <span class="keywordtype">int</span> ch){
+<a name="l00004"></a>00004         <span class="keywordflow">if</span> (SDL_Init(SDL_INIT_VIDEO) == -1) {
+<a name="l00005"></a>00005                 cout &lt;&lt; <span class="stringliteral">&quot;Failed to initialize SDL: &quot;</span> &lt;&lt; SDL_GetError();
+<a name="l00006"></a>00006                 exit(1);
+<a name="l00007"></a>00007         }
+<a name="l00008"></a>00008         atexit(SDL_Quit);
+<a name="l00009"></a>00009         <span class="comment">// Initilize the screen</span>
+<a name="l00010"></a>00010         scr = SDL_SetVideoMode(scrWidth, scrHeigth, 32,SDL_HWSURFACE | SDL_DOUBLEBUF);
+<a name="l00011"></a>00011         <span class="keywordflow">if</span> (scr == NULL) {
+<a name="l00012"></a>00012                 cout &lt;&lt; <span class="stringliteral">&quot;Unable to set video mode: &quot;</span> &lt;&lt; SDL_GetError();
+<a name="l00013"></a>00013                 exit(1);
+<a name="l00014"></a>00014         }
+<a name="l00015"></a>00015         <span class="comment">//load font data</span>
+<a name="l00016"></a>00016         FILE *file;
+<a name="l00017"></a>00017         currFont = <span class="keyword">new</span> <span class="keywordtype">char</span> [fSize];
+<a name="l00018"></a>00018         file = fopen(fontFile, <span class="stringliteral">&quot;r&quot;</span>);
+<a name="l00019"></a>00019         fread(currFont, fSize, 1, file);
+<a name="l00020"></a>00020         fclose(file);
+<a name="l00021"></a>00021         gfxPrimitivesSetFont(currFont, cw, ch);
+<a name="l00022"></a>00022         <span class="comment">//calcula relacao entre area da tela e mundo real</span>
+<a name="l00023"></a>00023         xScale = (float) scrWidth/realWidth;
+<a name="l00024"></a>00024         yScale = (float) scrHeigth/realHeigth;
+<a name="l00025"></a>00025         scale = xScale;
+<a name="l00026"></a>00026 }
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="classDrawing.html#a88db8447bd39261ba7adbe2db0717d3c">00028</a> <span class="keywordtype">void</span> <a class="code" href="classDrawing.html#a88db8447bd39261ba7adbe2db0717d3c">Drawing::clearScr</a>(){
+<a name="l00029"></a>00029         SDL_FillRect(scr, NULL, 0);
+<a name="l00030"></a>00030 }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="classDrawing.html#ae6254853f96f616561b33b4b3407bd7e">00032</a> <span class="keywordtype">void</span> <a class="code" href="classDrawing.html#ae6254853f96f616561b33b4b3407bd7e">Drawing::updateScr</a>(){
+<a name="l00033"></a>00033         SDL_Flip(scr);
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classDrawing.html#adc0defbdba76a1226d67bc866e7e68e1">00036</a> <span class="keywordtype">void</span> <a class="code" href="classDrawing.html#adc0defbdba76a1226d67bc866e7e68e1">Drawing::drawCircle</a>(<span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> &amp;center, <span class="keywordtype">int</span> size, Uint32 color) {
+<a name="l00037"></a>00037         filledCircleColor(scr, (Sint16) (center.<a class="code" href="classPoint2d.html#a3491ec5f89149b0e91bbb91bc6f4308f">x</a> *xScale), (Sint16) (center.<a class="code" href="classPoint2d.html#a2626bd0c5cce36fb441a5c1720b2c537">y</a> *yScale), (Sint16) (size *scale), color);
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="classDrawing.html#a4017d16025c3db2a6976fcde15cc7ec5">00040</a> <span class="keywordtype">void</span> <a class="code" href="classDrawing.html#a4017d16025c3db2a6976fcde15cc7ec5">Drawing::drawPolygon</a>(<a class="code" href="classPoint2d.html">Point2d</a> vertices[], <span class="keywordtype">int</span> nvertices, Uint32 color){
+<a name="l00041"></a>00041         Sint16 *x = <span class="keyword">new</span> Sint16 [nvertices];
+<a name="l00042"></a>00042         Sint16 *y = <span class="keyword">new</span> Sint16 [nvertices];
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nvertices; i++){
+<a name="l00045"></a>00045                 x[i] = (Sint16) (vertices[i].x * xScale);
+<a name="l00046"></a>00046                 y[i] = (Sint16) (vertices[i].y * yScale);
+<a name="l00047"></a>00047         }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         filledPolygonColor(scr, x, y, nvertices, color);
+<a name="l00050"></a>00050 }
+<a name="l00051"></a>00051 
+<a name="l00052"></a><a class="code" href="classDrawing.html#af76682f3ba0eafb8ec028755c01265a7">00052</a> <span class="keywordtype">void</span> <a class="code" href="classDrawing.html#af76682f3ba0eafb8ec028755c01265a7">Drawing::drawLine</a>(<span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> &amp;ini, <a class="code" href="classPoint2d.html">Point2d</a> &amp;fim, Uint32 color){
+<a name="l00053"></a>00053         lineColor(scr, (Sint16) (ini.<a class="code" href="classPoint2d.html#a3491ec5f89149b0e91bbb91bc6f4308f">x</a> *xScale), (Sint16) (ini.<a class="code" href="classPoint2d.html#a2626bd0c5cce36fb441a5c1720b2c537">y</a> *yScale), (Sint16) (fim.<a class="code" href="classPoint2d.html#a3491ec5f89149b0e91bbb91bc6f4308f">x</a> *xScale), (Sint16) (fim.<a class="code" href="classPoint2d.html#a2626bd0c5cce36fb441a5c1720b2c537">y</a> *yScale), color);
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 
+<a name="l00056"></a><a class="code" href="classDrawing.html#a623543d4018fe014056d15b3300078f5">00056</a> <span class="keywordtype">void</span> <a class="code" href="classDrawing.html#a623543d4018fe014056d15b3300078f5">Drawing::drawText</a>(<span class="keywordtype">string</span> text,<a class="code" href="classPoint2d.html">Point2d</a> pos, Uint32 color){
+<a name="l00057"></a>00057         stringColor(scr, pos.<a class="code" href="classPoint2d.html#a3491ec5f89149b0e91bbb91bc6f4308f">x</a>, pos.<a class="code" href="classPoint2d.html#a2626bd0c5cce36fb441a5c1720b2c537">y</a>, text.c_str(), color);
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 Drawing::~Drawing(){
+<a name="l00061"></a>00061         <span class="comment">//TODO pau loco</span>
+<a name="l00062"></a>00062         <span class="comment">//delete[] currFont;</span>
+<a name="l00063"></a>00063 }
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:37 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

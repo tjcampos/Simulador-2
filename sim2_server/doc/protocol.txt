@@ -1,0 +1,137 @@
+ATENÇÃO!!! TODOS  os comandos devem terminar com ;
+
+start - Ex: start worlddim 640 480 sreendim 640 480;
+		prarametros obrigatorios:
+			worlddim <x> <y> - tamanho do mundo
+			screendim <x> <y> - tamanho da tela, em pixels
+
+restart - Ex: restart;
+
+add
+
+	robot - Ex: add robot id 23 pos 20 21 size 20;
+		prarametros obrigatorios:
+			id <x> - id do objeto
+			pos <x> <y> - posicao do robo na tela, em mm
+		parametros opcionais (valor default):
+			size <x> (30) - diametro do robo, em mm
+			rot <x> (0) - angulo de rotacao do robô, em graus
+			color <x> (0x0000FFFF) - cor do robo
+
+	obstacle - Ex: add obstacle id 28 vert 20 20 vert 40 20 vert 20 40;
+		prarametros obrigatorios:
+			id <x> - id do objeto
+			vert <x> <y> - sao necessarios pelo menos 3 vertices
+		parametros opcionais (valor default):
+			color <x> (0xFF000077) - cor do robo
+
+	sensor - Ex: add sensor rid 1 sid 1 pos 45;
+		parametros obrigatorios:
+			rid <x> - id do robo em que sera adicionado o sensor
+			sid <x> - id do novo sensor
+		parametros opcionais (valor default):
+			rot <x> (0) - angulo de rotacao do sensor
+			length <x> (100) - comprimento do sensor
+			width <x> (50) - largura do sensor
+			pos <x> (0) - posicao do sensor, em graus, em volta do robo
+
+	evtinterruption - Ex: add evtinterruption id 1;
+		parametros obrigatorios:
+			id <x> - id do robo a ser monitorado por este socket
+
+	timealert - Ex: add timealert time 100;
+		parametros obrigatorios:
+			time <x> - tempo em ms, em que o simulador retornara um aviso
+
+
+del
+	object/robot/obstacle - Ex: del object id 5;
+		parametros obrigatorios:
+			id <x> - id do objeto a ser removido
+
+	sensor - Ex: del sensor rid 1 sid 2;
+		parametros obrigatorios:
+			rid <x> - id do robo que tera o sensor removido
+			sid <x> - id do sensor a ser removido
+
+	evtinterruption - Ex: del evtinterruption id 1;
+		parametros obrigatorios:
+			id <x> - id do robo a ser monitorado por este socket
+
+	timealert - Ex: del timealert time 100;
+		parametros obrigatorios:
+			time <x> - tempo em ms, em que o aviso foi programado
+
+get
+	robot - Ex: get robot id 5 rot pos;
+		parametros obrigatorios:
+			id <x> - id do objeto a ser consultado
+		parametros para recebimento:
+			color - cor do robo
+			pos - posicao do robo no eixo no formato "x y"
+			size - diametro do robo
+			rot - angulo de rotacao do robo, em graus
+			speed - velocidade da roda esquerda "vesq vdir"
+			collision - retorna 1 em caso de colisao ou 0 cc.
+
+	obstacle - Ex: get obstacle id 3 vertices;
+		parametros obrigatorios:
+			id <x> - id do objeto a ser consultado
+		parametros para recebimento:
+			color - cor do obstaculo
+			vertices - vertices que compoe o obstaculo
+			nvertices - numero de vertices do obstaculo
+
+	detections - Ex: get detections id 1;
+		parametros obrigatorios:
+			id <x> - id do robo a serem consultados os sensores
+
+	sensor - Ex: get sensor rid 1 sid 1 length;
+		parametros obrigatorios:
+			rid <x> - id do robo que possui o sensor 
+			sid <x> - id do sensor
+		parametros opcionais (valor default):
+			rot - angulo de rotacao do sensor
+			length - comprimento do sensor
+			width - largura do sensor
+			pos - posicao do sensor, em graus, em volta do robo
+
+	simulation - Ex: get simulation time;
+		parametros para recebimento:
+			time - retorna o tempo em ms
+			fast - coloca a simulacao no modo rapido, onde nada é desenhado na tela e o fps é configurado para o maximo
+
+set
+	robot - Ex: set robot id 1 speed 100 0;
+		parametros obrigatorios:
+			id <x> - id do objeto a ser consultado
+		parametros para recebimento:
+			color - cor do robo
+			pos - posicao do robo no eixo no formato "x y"
+			size - diametro do robo
+			rot - angulo de rotacao do robo, em graus
+			speed - velocidade da roda esquerda "vesq vdir"
+
+	obstacle - Ex: set obstacle id 3 color 4278190199;
+		parametros obrigatorios:
+			id <x> - id do objeto a ser consultado
+		parametros para recebimento:
+			color - cor do obstaculo
+
+	sensor - Ex: set sensor rid 1 sid 1 length 10;
+		parametros obrigatorios:
+			rid <x> - id do robo que possui o sensor 
+			sid <x> - id do sensor
+		parametros opcionais (valor default):
+			rot <x> (0) - angulo de rotacao do sensor
+			length <x> (100) - comprimento do sensor
+			width <x> (50) - largura do sensor
+			pos <x> (0) - posicao do sensor, em graus, em volta do robo
+
+	simulation - Ex: set simulation time 50000;
+		parametros opcionais (valor default):
+			time <x> - novo valor em ms do tempo da simulacao		
+			fast <x> - seta o simulador para modo acelerado(1), ou comum (0)
+			fps <x> - numero de fps a ser renderizado na tela (quanto maior, maior uso de cpu e maior fidelidade nos dados)
+			speedmult <x> - numero de vezes em que o tempo será acelerado (quanto maior, menor a fidelidade nos dados)
+		

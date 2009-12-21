@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de point2d.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>point2d.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef POINT2D_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define POINT2D_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;SDL/SDL.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;memory&gt;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="keyword">using namespace </span>std;
+<a name="l00008"></a>00008 
+<a name="l00012"></a><a class="code" href="classPoint2d.html">00012</a> <span class="keyword">class </span><a class="code" href="classPoint2d.html">Point2d</a>{
+<a name="l00013"></a>00013         <span class="keyword">public</span>:
+<a name="l00017"></a><a class="code" href="classPoint2d.html#3491ec5f89149b0e91bbb91bc6f4308f">00017</a>                 <span class="keywordtype">int</span> <a class="code" href="classPoint2d.html#3491ec5f89149b0e91bbb91bc6f4308f">x</a>;
+<a name="l00021"></a><a class="code" href="classPoint2d.html#2626bd0c5cce36fb441a5c1720b2c537">00021</a>                 <span class="keywordtype">int</span> <a class="code" href="classPoint2d.html#2626bd0c5cce36fb441a5c1720b2c537">y</a>;
+<a name="l00022"></a>00022 
+<a name="l00028"></a>00028                 <a class="code" href="classPoint2d.html#af304b252b21cfdcd2c8ec4c62e55775">Point2d</a>(<span class="keywordtype">int</span> <a class="code" href="classPoint2d.html#3491ec5f89149b0e91bbb91bc6f4308f">x</a> = 0, <span class="keywordtype">int</span> <a class="code" href="classPoint2d.html#2626bd0c5cce36fb441a5c1720b2c537">y</a> = 0);
+<a name="l00034"></a>00034                 <a class="code" href="classPoint2d.html">Point2d</a> &amp;<a class="code" href="classPoint2d.html#9a063c1f56cacffa7c021cd57d7d914e">operator= </a>(<span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> &amp;p);
+<a name="l00040"></a>00040                 <a class="code" href="classPoint2d.html">Point2d</a> &amp;<a class="code" href="classPoint2d.html#3d395fcb48adaa50920a8ffc319ecba3">operator+= </a>(<span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> &amp;p);
+<a name="l00046"></a>00046                 <span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> <a class="code" href="classPoint2d.html#9112cc4759ff9227b9c7538c38ad6eed">operator+ </a>(<span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> &amp;p) <span class="keyword">const</span>;
+<a name="l00052"></a>00052                 <a class="code" href="classPoint2d.html">Point2d</a> &amp;<a class="code" href="classPoint2d.html#062738dcfa7b7cc86001b81419b0033f">operator*= </a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;p);
+<a name="l00058"></a>00058                 <span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> <a class="code" href="classPoint2d.html#7f4d4f77fa4db8ee8a30f20089602f11">operator* </a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;p) <span class="keyword">const</span>;
+<a name="l00064"></a>00064                 <a class="code" href="classPoint2d.html">Point2d</a> &amp;<a class="code" href="classPoint2d.html#d175b35b47537458060b46184de60b0c">operator/= </a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;p);
+<a name="l00070"></a>00070                 <span class="keyword">const</span> <a class="code" href="classPoint2d.html">Point2d</a> <a class="code" href="classPoint2d.html#6c9aa6043aa397dd6cf3fe10ae4568df">operator/ </a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;p) <span class="keyword">const</span>;
+<a name="l00071"></a>00071 };
+<a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

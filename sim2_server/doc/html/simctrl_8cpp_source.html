@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Código-Fonte de simctrl.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>simctrl.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="simctrl_8h.html">simctrl.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="classSimCtrl.html#ae4990114da9cb0ab0c0335db28902572">00003</a> <a class="code" href="classSimCtrl.html#ae4990114da9cb0ab0c0335db28902572">SimCtrl::SimCtrl</a>(<span class="keywordtype">bool</span> fast, <span class="keywordtype">int</span> speedMultiply, <span class="keywordtype">int</span> fps){
+<a name="l00004"></a>00004         running = <span class="keyword">true</span>;
+<a name="l00005"></a>00005         started = <span class="keyword">false</span>;
+<a name="l00006"></a>00006         this-&gt;fps = fps;
+<a name="l00007"></a>00007         this-&gt;speedMultiply = speedMultiply;
+<a name="l00008"></a>00008         this-&gt;tick = speedMultiply*10000/fps;
+<a name="l00009"></a>00009         this-&gt;fast = fast;
+<a name="l00010"></a>00010         simTime = 0;
+<a name="l00011"></a>00011         limitFps = fps?<span class="keyword">true</span>:<span class="keyword">false</span>;
+<a name="l00012"></a>00012 }
+<a name="l00013"></a>00013 
+<a name="l00014"></a><a class="code" href="classSimCtrl.html#a533649a1ee4df5f0993f6fb7b0dd57ac">00014</a> <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#a533649a1ee4df5f0993f6fb7b0dd57ac">SimCtrl::isRunning</a>() {
+<a name="l00015"></a>00015         <span class="keywordflow">return</span> running;
+<a name="l00016"></a>00016 }
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="classSimCtrl.html#ad5be47d8f5075ad7ca77b0a08754a988">00018</a> <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#ad5be47d8f5075ad7ca77b0a08754a988">SimCtrl::isStarted</a>() {
+<a name="l00019"></a>00019         <span class="keywordflow">return</span> started;
+<a name="l00020"></a>00020 }
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="classSimCtrl.html#adfee1f305213cab15deed7021f0f1802">00022</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#adfee1f305213cab15deed7021f0f1802">SimCtrl::start</a>() {
+<a name="l00023"></a>00023         started = <span class="keyword">true</span>;
+<a name="l00024"></a>00024         SDL_initFramerate(&amp;fpsm);
+<a name="l00025"></a>00025         SDL_setFramerate(&amp;fpsm, fps);
+<a name="l00026"></a>00026 }
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="classSimCtrl.html#a64b81b5ae68547e180f51d5b042c21c9">00028</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a64b81b5ae68547e180f51d5b042c21c9">SimCtrl::stopSimulation</a>(){
+<a name="l00029"></a>00029         running = <span class="keyword">false</span>;
+<a name="l00030"></a>00030 }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="classSimCtrl.html#a646af51f77ca5cf63274a9f5a1dcf372">00032</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a646af51f77ca5cf63274a9f5a1dcf372">SimCtrl::delay</a>(<span class="keywordtype">int</span> time){
+<a name="l00033"></a>00033         SDL_Delay(time);
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classSimCtrl.html#a7c7ccd78e1dea2fe54099a9a90882f1c">00036</a> <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#a7c7ccd78e1dea2fe54099a9a90882f1c">SimCtrl::addObject</a>(<a class="code" href="classObject.html">Object</a> &amp;o){
+<a name="l00037"></a>00037         <span class="keywordflow">if</span> (findObject&lt;Object&gt;(o.<a class="code" href="classObject.html#a7ef64754f8708602b386ee09b43be992">getId</a>()) == NULL){
+<a name="l00038"></a>00038                 objects.push_back(&amp;o);
+<a name="l00039"></a>00039                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00040"></a>00040         }
+<a name="l00041"></a>00041         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00044"></a><a class="code" href="classSimCtrl.html#ad16f2bf209c7e6480fd05acc42a2e9c8">00044</a> <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#ad16f2bf209c7e6480fd05acc42a2e9c8">SimCtrl::delObject</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>){
+<a name="l00045"></a>00045         list&lt;Object*&gt;::iterator it;
+<a name="l00046"></a>00046         <span class="keywordflow">for</span> (it = objects.begin(); it != objects.end(); it++)
+<a name="l00047"></a>00047                 <span class="keywordflow">if</span> ((*it)-&gt;getId() == id){
+<a name="l00048"></a>00048                         objects.erase(it);
+<a name="l00049"></a>00049                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00050"></a>00050                 }
+<a name="l00051"></a>00051         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 }
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="classSimCtrl.html#a35d6e19183033c2e10bfff88f44122d6">00055</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a35d6e19183033c2e10bfff88f44122d6">SimCtrl::setFast</a>(<span class="keywordtype">bool</span> fast){
+<a name="l00056"></a>00056         this-&gt;fast = fast;
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="classSimCtrl.html#a06483b7d5ef32cf3a6f29aec803892b7">00059</a> <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#a06483b7d5ef32cf3a6f29aec803892b7">SimCtrl::getFast</a>(){
+<a name="l00060"></a>00060         <span class="keywordflow">return</span> fast;
+<a name="l00061"></a>00061 }
+<a name="l00062"></a>00062 
+<a name="l00063"></a><a class="code" href="classSimCtrl.html#a40e7227c6f3b9656e71193bf214ae36e">00063</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a40e7227c6f3b9656e71193bf214ae36e">SimCtrl::setSpeedMult</a>(<span class="keywordtype">int</span> sm){
+<a name="l00064"></a>00064         <span class="keywordflow">if</span> (sm &gt; 0){
+<a name="l00065"></a>00065                 speedMultiply = sm;
+<a name="l00066"></a>00066                 tick = speedMultiply*10000/fps;
+<a name="l00067"></a>00067                 SDL_setFramerate(&amp;fpsm, fps);
+<a name="l00068"></a>00068         }
+<a name="l00069"></a>00069 }
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="classSimCtrl.html#a3cbfd75e01b097d42376be55dcd52abc">00071</a> <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#a3cbfd75e01b097d42376be55dcd52abc">SimCtrl::getSpeedMult</a>(){
+<a name="l00072"></a>00072         <span class="keywordflow">return</span> speedMultiply;
+<a name="l00073"></a>00073 }
+<a name="l00074"></a>00074 
+<a name="l00075"></a><a class="code" href="classSimCtrl.html#a6ca3eccb1e209770fb960038e00912fc">00075</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a6ca3eccb1e209770fb960038e00912fc">SimCtrl::setFps</a>(<span class="keywordtype">int</span> fps){
+<a name="l00076"></a>00076         <span class="keywordflow">if</span> (fps &gt; 0){
+<a name="l00077"></a>00077                 this-&gt;fps = fps;
+<a name="l00078"></a>00078                 tick = speedMultiply*10000/fps;
+<a name="l00079"></a>00079                 SDL_setFramerate(&amp;fpsm, fps);
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081         limitFps = fps?<span class="keyword">true</span>:<span class="keyword">false</span>;
+<a name="l00082"></a>00082 }
+<a name="l00083"></a>00083 
+<a name="l00084"></a><a class="code" href="classSimCtrl.html#ac9f3d689ea837a8c2c4ba97b139f6ecb">00084</a> <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#ac9f3d689ea837a8c2c4ba97b139f6ecb">SimCtrl::getFps</a>(){
+<a name="l00085"></a>00085         <span class="keywordflow">return</span> fps;
+<a name="l00086"></a>00086 }
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="classSimCtrl.html#a459bf33b8645177f51d45d6037611404">00088</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a459bf33b8645177f51d45d6037611404">SimCtrl::draw</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s){
+<a name="l00089"></a>00089         <span class="keywordflow">if</span> (!fast){
+<a name="l00090"></a>00090                 stringstream ss;
+<a name="l00091"></a>00091                 <span class="keywordtype">string</span> time;
+<a name="l00092"></a>00092                 <span class="keywordflow">for</span> (list&lt;Object*&gt;::iterator it = objects.begin() ; it != objects.end(); it++)
+<a name="l00093"></a>00093                         (*it)-&gt;draw(s);
+<a name="l00094"></a>00094                 <span class="keywordflow">if</span> (limitFps)
+<a name="l00095"></a>00095                         SDL_framerateDelay(&amp;fpsm);
+<a name="l00096"></a>00096                 ss &lt;&lt; simTime/10000;
+<a name="l00097"></a>00097                 ss &gt;&gt; time;
+<a name="l00098"></a>00098                 time += <span class="stringliteral">&quot; sec&quot;</span>;
+<a name="l00099"></a>00099                 <a class="code" href="classPoint2d.html">Point2d</a> p (10,10);
+<a name="l00100"></a>00100                 s.<a class="code" href="classDrawing.html#a623543d4018fe014056d15b3300078f5">drawText</a>(time, p);
+<a name="l00101"></a>00101         }
+<a name="l00102"></a>00102 }
+<a name="l00103"></a>00103 
+<a name="l00104"></a><a class="code" href="classSimCtrl.html#ab42a1e61703a5924ad1524d9f1a355d3">00104</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#ab42a1e61703a5924ad1524d9f1a355d3">SimCtrl::runStep</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s){
+<a name="l00105"></a>00105         <span class="keywordtype">int</span> tmpTick = tick;
+<a name="l00106"></a>00106         simTime += tmpTick;
+<a name="l00107"></a>00107         detections.clear();
+<a name="l00108"></a>00108         <span class="keywordflow">for</span> (list&lt;Object*&gt;::iterator it = objects.begin() ; it != objects.end(); it++){
+<a name="l00109"></a>00109                 (*it)-&gt;runStep(s,tmpTick, objects);
+<a name="l00110"></a>00110                 <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(**it) == <span class="keyword">typeid</span>(<a class="code" href="classRobot.html">Robot</a>)){
+<a name="l00111"></a>00111                         <a class="code" href="classRobot.html">Robot</a> *r = (<a class="code" href="classRobot.html">Robot</a>*) (*it);
+<a name="l00112"></a>00112                         list&lt;SLevel&gt; s = r-&gt;<a class="code" href="classRobot.html#a090a512f8170ea408555f6cb309cb9da">checkSensors</a>(objects);
+<a name="l00113"></a>00113                         detections.splice(detections.begin(), s);
+<a name="l00114"></a>00114                 }
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116 }
+<a name="l00117"></a>00117 
+<a name="l00118"></a><a class="code" href="classSimCtrl.html#a4c6eb81e9fe5f491dbb21ddf6e50570a">00118</a> list&lt;SLevel&gt;* <span class="keyword">const</span> <a class="code" href="classSimCtrl.html#a4c6eb81e9fe5f491dbb21ddf6e50570a">SimCtrl::getDetections</a>(){
+<a name="l00119"></a>00119         <span class="keywordflow">return</span> &amp;detections;
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="classSimCtrl.html#a31a1c03192b8916d86e7a1e084ebbb6c">00122</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#a31a1c03192b8916d86e7a1e084ebbb6c">SimCtrl::getSimTime</a>(){
+<a name="l00123"></a>00123         <span class="keywordflow">return</span> simTime/10;
+<a name="l00124"></a>00124 }
+<a name="l00125"></a>00125 
+<a name="l00126"></a><a class="code" href="classSimCtrl.html#ac488529219dc3e1e5aa7c6b1fd4b5013">00126</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#ac488529219dc3e1e5aa7c6b1fd4b5013">SimCtrl::setSimTime</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> time){
+<a name="l00127"></a>00127         simTime = time*10;
+<a name="l00128"></a>00128 }
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="classSimCtrl.html#a6e486abc52d39ecdb9d42f0c9fd213c4">00130</a> list&lt;Event&gt; <span class="keyword">const</span> <a class="code" href="classSimCtrl.html#a6e486abc52d39ecdb9d42f0c9fd213c4">SimCtrl::getNewEvents</a>(){
+<a name="l00131"></a>00131         list&lt;Event&gt; evt;
+<a name="l00132"></a>00132         <span class="keywordflow">for</span> (list&lt;Object*&gt;::iterator it = objects.begin() ; it != objects.end(); it++){
+<a name="l00133"></a>00133                 <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(**it) == <span class="keyword">typeid</span>(<a class="code" href="classRobot.html">Robot</a>)){
+<a name="l00134"></a>00134                         <a class="code" href="classEvent.html">Event</a> tmp;
+<a name="l00135"></a>00135                         <a class="code" href="classRobot.html">Robot</a> *r = (<a class="code" href="classRobot.html">Robot</a>*) *it;
+<a name="l00136"></a>00136                         tmp.<a class="code" href="classEvent.html#a08ba599a781bea8b678251fdb7290890">id</a> = r-&gt;<a class="code" href="classObject.html#a7ef64754f8708602b386ee09b43be992">getId</a>();
+<a name="l00137"></a>00137                         tmp.<a class="code" href="classEvent.html#a393f66c0059c1c730bb7ccb605744e37">value</a> = r-&gt;<a class="code" href="classRobot.html#afeb3d68bc2efcb6cfb77a71910fe598c">getNewEvents</a>();
+<a name="l00138"></a>00138                         <span class="keywordflow">if</span> (tmp.<a class="code" href="classEvent.html#a393f66c0059c1c730bb7ccb605744e37">value</a> != 0)
+<a name="l00139"></a>00139                                 evt.push_back(tmp);
+<a name="l00140"></a>00140                 }
+<a name="l00141"></a>00141         }
+<a name="l00142"></a>00142         <span class="keywordflow">return</span> evt;
+<a name="l00143"></a>00143 }
+<a name="l00144"></a>00144 
+<a name="l00145"></a><a class="code" href="classSimCtrl.html#a64c42080aed2fc82c3ac7f289086e766">00145</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a64c42080aed2fc82c3ac7f289086e766">SimCtrl::sendEvents</a>(<a class="code" href="classSockServ.html">SockServ</a> &amp;sock){
+<a name="l00146"></a>00146         list&lt;Event&gt; <span class="keyword">const</span> evt = <a class="code" href="classSimCtrl.html#a6e486abc52d39ecdb9d42f0c9fd213c4">getNewEvents</a>();
+<a name="l00147"></a>00147         <span class="keywordflow">for</span> (list&lt;Interruption&gt;::iterator i = interruptions.begin(); i != interruptions.end(); i++){
+<a name="l00148"></a>00148                 <span class="keywordflow">for</span> (list&lt;Event&gt;::const_iterator j = evt.begin(); j != evt.end(); j++){
+<a name="l00149"></a>00149                         <span class="keywordflow">if</span> (j-&gt;id == i-&gt;rid){
+<a name="l00150"></a>00150                                 <span class="keywordtype">string</span> s, tmp;
+<a name="l00151"></a>00151                                 stringstream conv;
+<a name="l00152"></a>00152                                 s = <span class="stringliteral">&quot;event robot id &quot;</span>;
+<a name="l00153"></a>00153                                 conv &lt;&lt; i-&gt;rid;
+<a name="l00154"></a>00154                                 conv &gt;&gt; tmp;
+<a name="l00155"></a>00155                                 s += tmp;
+<a name="l00156"></a>00156                                 <span class="keywordflow">if</span> ((j-&gt;value &amp; 1) != 0)
+<a name="l00157"></a>00157                                         s += <span class="stringliteral">&quot; sensor&quot;</span>;
+<a name="l00158"></a>00158                                 <span class="keywordflow">if</span> ((j-&gt;value &amp; 2) != 0)
+<a name="l00159"></a>00159                                         s += <span class="stringliteral">&quot; collision&quot;</span>;
+<a name="l00160"></a>00160                                 sock.<a class="code" href="classSockServ.html#adbc9ec753e7f43ab157fe5f81c777f79">sends</a>(s,i-&gt;socket);
+<a name="l00161"></a>00161                         }
+<a name="l00162"></a>00162                 }
+<a name="l00163"></a>00163         }
+<a name="l00164"></a>00164 }
+<a name="l00165"></a>00165 
+<a name="l00166"></a><a class="code" href="classSimCtrl.html#a4727c232d4fa6203ada8c6c5659cce9f">00166</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a4727c232d4fa6203ada8c6c5659cce9f">SimCtrl::addInterrupt</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">int</span> rId){
+<a name="l00167"></a>00167         <a class="code" href="classInterruption.html">Interruption</a> i;
+<a name="l00168"></a>00168         i.<a class="code" href="classInterruption.html#ad6d83446f0eda147ad03b4385b0a04ab">socket</a> = sock;
+<a name="l00169"></a>00169         i.<a class="code" href="classInterruption.html#a58217fbb09848f75bcae2fd109646414">rid</a> = rId;
+<a name="l00170"></a>00170         interruptions.push_back(i);
+<a name="l00171"></a>00171 }
+<a name="l00172"></a>00172 
+<a name="l00173"></a><a class="code" href="classSimCtrl.html#a46324ed4e20219c86c11f6d33739506d">00173</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a46324ed4e20219c86c11f6d33739506d">SimCtrl::delInterrupt</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">int</span> rId){
+<a name="l00174"></a>00174         <span class="keywordflow">for</span> (list&lt;Interruption&gt;::iterator i = interruptions.begin(); i != interruptions.end(); i++){
+<a name="l00175"></a>00175                 <span class="keywordflow">if</span> (i-&gt;rid == rId &amp;&amp; i-&gt;socket == sock){
+<a name="l00176"></a>00176                         list&lt;Interruption&gt;::iterator tmp = i;
+<a name="l00177"></a>00177                         i++;
+<a name="l00178"></a>00178                         interruptions.erase(tmp);
+<a name="l00179"></a>00179                 }
+<a name="l00180"></a>00180         }
+<a name="l00181"></a>00181 }
+<a name="l00182"></a>00182 
+<a name="l00183"></a><a class="code" href="classSimCtrl.html#a8c40ede588675ab7901739520c741f99">00183</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a8c40ede588675ab7901739520c741f99">SimCtrl::addTimeAlert</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> time){
+<a name="l00184"></a>00184         <a class="code" href="classTimeInterruption.html">TimeInterruption</a> t;
+<a name="l00185"></a>00185         t.<a class="code" href="classTimeInterruption.html#ae8d6903082a6c1c3713511e7e30af2d0">socket</a> = sock;
+<a name="l00186"></a>00186         t.<a class="code" href="classTimeInterruption.html#ae9cac6b45470086646de207b3e40e13e">time</a> = time;
+<a name="l00187"></a>00187         timeir.push_back(t);
+<a name="l00188"></a>00188 }
+<a name="l00189"></a>00189 
+<a name="l00190"></a><a class="code" href="classSimCtrl.html#acb85b092193bf4a7a17f45e1e48cae5b">00190</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#acb85b092193bf4a7a17f45e1e48cae5b">SimCtrl::delTimeAlert</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> time){
+<a name="l00191"></a>00191         <span class="keywordflow">for</span> (list&lt;TimeInterruption&gt;::iterator i = timeir.begin(); i != timeir.end(); i++){
+<a name="l00192"></a>00192                 <span class="keywordflow">if</span> (i-&gt;time == time &amp;&amp; i-&gt;socket == sock){
+<a name="l00193"></a>00193                         list&lt;TimeInterruption&gt;::iterator tmp = i;
+<a name="l00194"></a>00194                         i++;
+<a name="l00195"></a>00195                         timeir.erase(tmp);
+<a name="l00196"></a>00196                 }
+<a name="l00197"></a>00197         }
+<a name="l00198"></a>00198 }
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200 
+<a name="l00201"></a><a class="code" href="classSimCtrl.html#a866cbae097e523d9ee9163a7881f75e2">00201</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a866cbae097e523d9ee9163a7881f75e2">SimCtrl::sendTimeAlert</a>(<a class="code" href="classSockServ.html">SockServ</a> &amp;sock){
+<a name="l00202"></a>00202         <span class="keywordflow">for</span> (list&lt;TimeInterruption&gt;::iterator i = timeir.begin(); i != timeir.end(); i++){
+<a name="l00203"></a>00203                 <span class="keywordflow">if</span> (i-&gt;time &lt;= this-&gt;getSimTime()){
+<a name="l00204"></a>00204                         <span class="keywordtype">string</span> s, tmp;
+<a name="l00205"></a>00205                         stringstream conv;
+<a name="l00206"></a>00206                         s = <span class="stringliteral">&quot;timealert &quot;</span>;
+<a name="l00207"></a>00207                         conv &lt;&lt; i-&gt;time;
+<a name="l00208"></a>00208                         conv &gt;&gt; tmp;
+<a name="l00209"></a>00209                         s += tmp;
+<a name="l00210"></a>00210                         sock.<a class="code" href="classSockServ.html#adbc9ec753e7f43ab157fe5f81c777f79">sends</a>(s,i-&gt;socket);
+<a name="l00211"></a>00211                         
+<a name="l00212"></a>00212                         list&lt;TimeInterruption&gt;::iterator tmpi = i;
+<a name="l00213"></a>00213                         i++;
+<a name="l00214"></a>00214                         timeir.erase(tmpi);
+<a name="l00215"></a>00215                 }
+<a name="l00216"></a>00216         }
+<a name="l00217"></a>00217 }
+<a name="l00218"></a>00218 
+<a name="l00219"></a><a class="code" href="classSimCtrl.html#a3136a51501c487131692bae6eccf5e43">00219</a> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#a3136a51501c487131692bae6eccf5e43">SimCtrl::restart</a>(){
+<a name="l00220"></a>00220         objects.clear();
+<a name="l00221"></a>00221         detections.clear();
+<a name="l00222"></a>00222         interruptions.clear();
+<a name="l00223"></a>00223         timeir.clear();
+<a name="l00224"></a>00224         <a class="code" href="classSimCtrl.html#ac488529219dc3e1e5aa7c6b1fd4b5013">setSimTime</a>(0);
+<a name="l00225"></a>00225 }
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

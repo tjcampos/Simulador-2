@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de robot.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>robot.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef ROBOT_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define ROBOT_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="preprocessor">#include "drawing.h"</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include "point2d.h"</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include "trigtable.h"</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include "object.h"</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include "obstacle.h"</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include "<a class="code" href="checkintersect_8h.html">checkintersect.h</a>"</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include "slevel.h"</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include "rsensor.h"</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">using</span> std::list;
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keyword">class </span><a class="code" href="classRSensor.html">RSensor</a>;
+<a name="l00019"></a>00019 
+<a name="l00023"></a><a class="code" href="classRobot.html">00023</a> <span class="keyword">class </span><a class="code" href="classRobot.html">Robot</a> : <span class="keyword">public</span> <a class="code" href="classObject.html">Object</a>{
+<a name="l00024"></a>00024         <span class="keyword">private</span>:
+<a name="l00025"></a>00025                 <a class="code" href="classPoint2d.html">Point2d</a> pos;
+<a name="l00026"></a>00026                 <span class="keywordtype">int</span> size;
+<a name="l00027"></a>00027                 <span class="keywordtype">int</span> rot;
+<a name="l00028"></a>00028                 <span class="keywordtype">int</span> vl, vr;
+<a name="l00029"></a>00029                 list&lt;RSensor&gt; sensors; 
+<a name="l00030"></a>00030                 <span class="keywordtype">bool</span> collision, lastCollision;
+<a name="l00031"></a>00031                 <span class="keywordtype">int</span> newEvent;
+<a name="l00032"></a>00032                 list&lt;SLevel&gt; lastDetections;
+<a name="l00033"></a>00033         <span class="keyword">protected</span>:
+<a name="l00038"></a>00038                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#97f0eda04e921bd26cdfb3968a8759db">drawSensor</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s);
+<a name="l00044"></a>00044                 list&lt;RSensor&gt;::iterator <a class="code" href="classRobot.html#41acfadcc7d039b605946bbf47bdbb53">findSensor</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
+<a name="l00053"></a>00053                 <span class="keywordtype">bool</span> <a class="code" href="classRobot.html#a13c9adf86aced22fd5bf1cb65e8fdc5">isValidPosition</a>(list&lt;Object*&gt;::iterator begin, list&lt;Object*&gt;::iterator end, <a class="code" href="classPoint2d.html">Point2d</a> pos, <span class="keywordtype">int</span> size);
+<a name="l00058"></a>00058                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#f6b4bdf672cbd76a9ab3425092a09097">setFineRot</a>(<span class="keywordtype">int</span> rot);
+<a name="l00059"></a>00059         <span class="keyword">public</span>:
+<a name="l00072"></a>00072                 <a class="code" href="classRobot.html#452297439b807270aeb2ab7704b93a38">Robot</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, Uint32 color, <span class="keywordtype">int</span> posx, <span class="keywordtype">int</span> posy, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> rot = 0, <span class="keywordtype">int</span> vl = 0, <span class="keywordtype">int</span> vr = 0, <span class="keywordtype">bool</span> enable = <span class="keyword">true</span>);
+<a name="l00077"></a>00077                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#beff512903452f6e017af51db8e80a00">setPos</a>(<a class="code" href="classPoint2d.html">Point2d</a> pos);
+<a name="l00082"></a>00082                 <a class="code" href="classPoint2d.html">Point2d</a> <a class="code" href="classRobot.html#5cd05eca76186d01e5b5cb4a18455940">getPos</a>();
+<a name="l00087"></a>00087                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#2b8ca2a5de67f376bd75b8ea88aca347">setSize</a>(<span class="keywordtype">int</span> size);
+<a name="l00092"></a>00092                 <span class="keywordtype">int</span> <a class="code" href="classRobot.html#405c026c516b949f889d27e6292d246e">getSize</a>();
+<a name="l00097"></a>00097                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#17dcae026a9c691a7d8d2335c11ccdcf">setRot</a>(<span class="keywordtype">int</span> rot);
+<a name="l00102"></a>00102                 <span class="keywordtype">int</span> <a class="code" href="classRobot.html#1c94f64ef207d181d56502503997370f">getRot</a>();
+<a name="l00108"></a>00108                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#85dbb34662b60e077ed7d3b2fbc26cb5">setSpeed</a>(<span class="keywordtype">int</span> vl, <span class="keywordtype">int</span> vr);
+<a name="l00114"></a>00114                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#f1b4c9280000050ef54a56fa21142272">getSpeed</a>(<span class="keywordtype">int</span> &amp;vl, <span class="keywordtype">int</span> &amp;vr);
+<a name="l00115"></a>00115                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#631c08fd3f05239cec83ab4be157416a">draw</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s);
+<a name="l00122"></a>00122                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#e46d92d4d807db1077ff57a4fe5c8deb">runStep</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s, <span class="keywordtype">int</span> tick, list&lt;Object*&gt; &amp;objects);
+<a name="l00132"></a>00132                 <span class="keywordtype">bool</span> <a class="code" href="classRobot.html#2856d394fbb3adf4694b3ff5ea6d9a83">addSensor</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> pos , <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> rot = 0);
+<a name="l00138"></a>00138                 <span class="keywordtype">bool</span> <a class="code" href="classRobot.html#ac3651453b954b0627400a55bbecafd1">delSensor</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
+<a name="l00148"></a>00148                 <span class="keywordtype">bool</span> <a class="code" href="classRobot.html#697a5b67590808d72c0911136456dcb0">getSensor</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> &amp;pos , <span class="keywordtype">int</span> &amp;length, <span class="keywordtype">int</span> &amp;width, <span class="keywordtype">int</span> &amp;rot);
+<a name="l00158"></a>00158                 <span class="keywordtype">bool</span> <a class="code" href="classRobot.html#9caeac45be0f34b40f88166ba16d3bcb">setSensor</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> pos , <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> rot = 0);
+<a name="l00166"></a>00166                 list&lt;SLevel&gt; <span class="keyword">const</span> <a class="code" href="classRobot.html#090a512f8170ea408555f6cb309cb9da">checkSensors</a>(list&lt;Object*&gt; &amp;objects, <span class="keywordtype">int</span> max = 10, <span class="keywordtype">int</span> min = 0);
+<a name="l00171"></a>00171                 <span class="keywordtype">bool</span> <a class="code" href="classRobot.html#cb5788047b46a36dae4a3d6096c7430e">getCollision</a>(); 
+<a name="l00176"></a>00176                 <span class="keywordtype">int</span> <a class="code" href="classRobot.html#feb3d68bc2efcb6cfb77a71910fe598c">getNewEvents</a>();
+<a name="l00180"></a>00180                 <span class="keywordtype">void</span> <a class="code" href="classRobot.html#4c1a932a3a1570558c1cf50db1cff97f">clearEvents</a>();
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182 };
+<a name="l00183"></a>00183 
+<a name="l00187"></a><a class="code" href="classRSensor.html">00187</a> <span class="keyword">class </span><a class="code" href="classRSensor.html">RSensor</a>{
+<a name="l00188"></a>00188         <span class="keyword">private</span>:
+<a name="l00189"></a>00189                 <span class="keywordtype">int</span> id;
+<a name="l00190"></a>00190                 <span class="comment">//angulo de rotacao</span>
+<a name="l00191"></a>00191                 <span class="keywordtype">int</span> rot;
+<a name="l00192"></a>00192                 <span class="keywordtype">int</span> length;
+<a name="l00193"></a>00193                 <span class="keywordtype">int</span> width;
+<a name="l00194"></a>00194                 <span class="comment">//posicao em graus em volta do robo</span>
+<a name="l00195"></a>00195                 <span class="keywordtype">int</span> pos;
+<a name="l00196"></a>00196                 <a class="code" href="classPoint2d.html">Point2d</a> vertices[4];
+<a name="l00197"></a>00197                 list&lt;Point2d&gt; detections;
+<a name="l00198"></a>00198         <span class="keyword">public</span>:
+<a name="l00207"></a>00207                 <a class="code" href="classRSensor.html#ac0b6315ae6dbf6d29590049cd8a856c">RSensor</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> pos , <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> rot = 0);
+<a name="l00212"></a>00212                 <span class="keywordtype">int</span> <a class="code" href="classRSensor.html#3ce76dff9c599abd19d3040b3a900791">getId</a>();
+<a name="l00217"></a>00217                 <span class="keywordtype">void</span> <a class="code" href="classRSensor.html#eb088c98d257558060bfc3214f6bdeb4">setPos</a>(<span class="keywordtype">int</span> pos);
+<a name="l00222"></a>00222                 <span class="keywordtype">int</span> <a class="code" href="classRSensor.html#ee754cabeef5fc7d453ec25f3c97c968">getPos</a>();
+<a name="l00227"></a>00227                 <span class="keywordtype">void</span> <a class="code" href="classRSensor.html#267ed0ce885e570674154409ae130029">setRot</a>(<span class="keywordtype">int</span> rot);
+<a name="l00232"></a>00232                 <span class="keywordtype">int</span> <a class="code" href="classRSensor.html#65e59817d7f682cf411eae7be7ff320d">getRot</a>();
+<a name="l00237"></a>00237                 <span class="keywordtype">void</span> <a class="code" href="classRSensor.html#f359a2dab828819427c083db59dbc13e">setLength</a>(<span class="keywordtype">int</span> length);
+<a name="l00242"></a>00242                 <span class="keywordtype">int</span> <a class="code" href="classRSensor.html#d9efd33e5bc7714140ec1fa64aae21b4">getLength</a>();
+<a name="l00247"></a>00247                 <span class="keywordtype">void</span> <a class="code" href="classRSensor.html#5f8335b79f48a6f71c65dc3dd71c4b46">setWidth</a>(<span class="keywordtype">int</span> width);
+<a name="l00252"></a>00252                 <span class="keywordtype">int</span> <a class="code" href="classRSensor.html#a1cdd1c03ee3aee1682f862a8d7122e8">getWidth</a>();
+<a name="l00262"></a>00262                 <span class="keywordtype">int</span> <a class="code" href="classRSensor.html#9050f6721f1ced78137620dcd15c5e0c">scan</a>(list&lt;Object*&gt; &amp;objects, <a class="code" href="classRobot.html">Robot</a> *r, <span class="keywordtype">int</span> max, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> maxBufferSize = 1024);
+<a name="l00267"></a>00267                 <span class="keywordtype">void</span> <a class="code" href="classRSensor.html#3aab14a34f33134bcba801786d60c9ce">draw</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s);
+<a name="l00268"></a>00268 };
+<a name="l00269"></a>00269 
+<a name="l00270"></a>00270 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

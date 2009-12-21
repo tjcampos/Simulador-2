@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Código-Fonte de object.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>object.h</h1><a href="object_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00005"></a>00005 <span class="preprocessor">#ifndef OBJECT_H</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#define OBJECT_H</span>
+<a name="l00007"></a>00007 <span class="preprocessor"></span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;SDL/SDL.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;SDL/SDL_gfxPrimitives.h&quot;</span>      <span class="comment">// SDL_gfx Primitives</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;drawing.h&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="point2d_8h.html">point2d.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="trigtable_8h.html">trigtable.h</a>&quot;</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">using</span> std::list;
+<a name="l00017"></a>00017 
+<a name="l00021"></a><a class="code" href="classObject.html">00021</a> <span class="keyword">class </span><a class="code" href="classObject.html">Object</a>{
+<a name="l00022"></a>00022         <span class="keyword">private</span>:
+<a name="l00023"></a>00023                 Uint32 color;
+<a name="l00024"></a>00024                 <span class="keywordtype">int</span> id;
+<a name="l00025"></a>00025                 <span class="keywordtype">bool</span> enable;
+<a name="l00026"></a>00026         <span class="keyword">public</span>:
+<a name="l00033"></a>00033                 <a class="code" href="classObject.html#a0c6ece9de140714ae2185ea42760c51f">Object</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, Uint32 color, <span class="keywordtype">bool</span> enable);
+<a name="l00038"></a>00038                 <span class="keywordtype">void</span> <a class="code" href="classObject.html#a67ba768895edfb1144357c6eb73a1067">setColor</a>(Uint32 color);
+<a name="l00043"></a>00043                 Uint32 <a class="code" href="classObject.html#a6731d0b1ab7e6113136962690dcd2d18">getColor</a>();
+<a name="l00048"></a>00048                 <span class="keywordtype">int</span> <a class="code" href="classObject.html#a7ef64754f8708602b386ee09b43be992">getId</a>();
+<a name="l00053"></a>00053                 <span class="keywordtype">void</span> <a class="code" href="classObject.html#ae35f79637a919c86b93dd3488c03c613">setEnable</a>(<span class="keywordtype">bool</span> enable);
+<a name="l00058"></a>00058                 <span class="keywordtype">bool</span> <a class="code" href="classObject.html#a892a9777edcfdd0e064e5b44c781094a">getEnable</a>();
+<a name="l00063"></a>00063                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classObject.html#aaa843497df146afaa721577e582c8ed2">draw</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s) = 0;
+<a name="l00070"></a>00070                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classObject.html#a75a0ba175f1f7b192bda2effb2416f7e">runStep</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s, <span class="keywordtype">int</span> tick, list&lt;Object*&gt; &amp;objects) = 0;
+<a name="l00071"></a>00071 };
+<a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:37 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

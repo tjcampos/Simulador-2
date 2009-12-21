@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de simctrl.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>simctrl.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef SIMCTRL_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define SIMCTRL_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;SDL/SDL.h&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;SDL/SDL_framerate.h&gt;</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="preprocessor">#include "object.h"</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include "robot.h"</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include "obstacle.h"</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include "drawing.h"</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include "sockserv.h"</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="keyword">using</span> std::list;
+<a name="l00018"></a>00018 
+<a name="l00022"></a><a class="code" href="classEvent.html">00022</a> <span class="keyword">class </span><a class="code" href="classEvent.html">Event</a> {
+<a name="l00023"></a>00023         <span class="keyword">public</span>:
+<a name="l00027"></a><a class="code" href="classEvent.html#08ba599a781bea8b678251fdb7290890">00027</a>                 <span class="keywordtype">int</span> <a class="code" href="classEvent.html#08ba599a781bea8b678251fdb7290890">id</a>;
+<a name="l00033"></a><a class="code" href="classEvent.html#393f66c0059c1c730bb7ccb605744e37">00033</a>                 <span class="keywordtype">int</span> <a class="code" href="classEvent.html#393f66c0059c1c730bb7ccb605744e37">value</a>;
+<a name="l00034"></a>00034 };
+<a name="l00035"></a>00035 
+<a name="l00039"></a><a class="code" href="classInterruption.html">00039</a> <span class="keyword">class </span><a class="code" href="classInterruption.html">Interruption</a> {
+<a name="l00040"></a>00040         <span class="keyword">public</span>:
+<a name="l00044"></a><a class="code" href="classInterruption.html#d6d83446f0eda147ad03b4385b0a04ab">00044</a>                 <span class="keywordtype">int</span> <a class="code" href="classInterruption.html#d6d83446f0eda147ad03b4385b0a04ab">socket</a>;
+<a name="l00048"></a><a class="code" href="classInterruption.html#58217fbb09848f75bcae2fd109646414">00048</a>                 <span class="keywordtype">int</span> <a class="code" href="classInterruption.html#58217fbb09848f75bcae2fd109646414">rid</a>;
+<a name="l00049"></a>00049 };
+<a name="l00050"></a>00050 
+<a name="l00054"></a><a class="code" href="classTimeInterruption.html">00054</a> <span class="keyword">class </span><a class="code" href="classTimeInterruption.html">TimeInterruption</a> {
+<a name="l00055"></a>00055         <span class="keyword">public</span>:
+<a name="l00059"></a><a class="code" href="classTimeInterruption.html#e8d6903082a6c1c3713511e7e30af2d0">00059</a>                 <span class="keywordtype">int</span> <a class="code" href="classTimeInterruption.html#e8d6903082a6c1c3713511e7e30af2d0">socket</a>;
+<a name="l00063"></a><a class="code" href="classTimeInterruption.html#e9cac6b45470086646de207b3e40e13e">00063</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="classTimeInterruption.html#e9cac6b45470086646de207b3e40e13e">time</a>;
+<a name="l00064"></a>00064 };
+<a name="l00065"></a>00065 
+<a name="l00069"></a><a class="code" href="classSimCtrl.html">00069</a> <span class="keyword">class </span><a class="code" href="classSimCtrl.html">SimCtrl</a> {
+<a name="l00070"></a>00070         <span class="keyword">private</span>:
+<a name="l00071"></a>00071                 <span class="keywordtype">bool</span> running, started;
+<a name="l00072"></a>00072                 <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> simTime; <span class="comment">//unidade: sec*10E-4</span>
+<a name="l00073"></a>00073                 <span class="keywordtype">int</span> fps, tick, speedMultiply;
+<a name="l00074"></a>00074                 <span class="keywordtype">bool</span> fast, limitFps;
+<a name="l00075"></a>00075                 list&lt;Object*&gt; objects; 
+<a name="l00076"></a>00076                 FPSmanager fpsm;
+<a name="l00077"></a>00077                 list&lt;SLevel&gt; detections;
+<a name="l00078"></a>00078                 list&lt;Interruption&gt; interruptions;
+<a name="l00079"></a>00079                 list&lt;TimeInterruption&gt; timeir;
+<a name="l00080"></a>00080         <span class="keyword">protected</span>:
+<a name="l00085"></a>00085                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<a name="l00086"></a><a class="code" href="classSimCtrl.html#174dfa8975d991b7a660a8aed2221d5d">00086</a>                 <a class="code" href="classObject.html">Object</a> *<a class="code" href="classSimCtrl.html#174dfa8975d991b7a660a8aed2221d5d">findObject</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>){
+<a name="l00087"></a>00087                         list&lt;Object*&gt;::iterator it;
+<a name="l00088"></a>00088                         <span class="keywordflow">for</span> (it = objects.begin(); it != objects.end(); it++)
+<a name="l00089"></a>00089                                 <span class="keywordflow">if</span> ((*it)-&gt;getId() == id)
+<a name="l00090"></a>00090                                         <span class="keywordflow">return</span> (*it);
+<a name="l00091"></a>00091                         <span class="keywordflow">return</span> NULL;
+<a name="l00092"></a>00092                 }
+<a name="l00097"></a>00097                 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#646af51f77ca5cf63274a9f5a1dcf372">delay</a>(<span class="keywordtype">int</span> time = 20);
+<a name="l00098"></a>00098         <span class="keyword">public</span>:
+<a name="l00105"></a>00105                 <a class="code" href="classSimCtrl.html#e4990114da9cb0ab0c0335db28902572">SimCtrl</a>(<span class="keywordtype">bool</span> fast = <span class="keyword">false</span>, <span class="keywordtype">int</span> speedMultiply = 1, <span class="keywordtype">int</span> fps = 30);
+<a name="l00110"></a>00110                 <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#533649a1ee4df5f0993f6fb7b0dd57ac">isRunning</a>();
+<a name="l00114"></a>00114                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#64b81b5ae68547e180f51d5b042c21c9">stopSimulation</a>();
+<a name="l00119"></a>00119                 <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#d5be47d8f5075ad7ca77b0a08754a988">isStarted</a>();
+<a name="l00123"></a>00123                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#dfee1f305213cab15deed7021f0f1802">start</a>();
+<a name="l00128"></a>00128                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#35d6e19183033c2e10bfff88f44122d6">setFast</a>(<span class="keywordtype">bool</span> fast);
+<a name="l00133"></a>00133                 <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#06483b7d5ef32cf3a6f29aec803892b7">getFast</a>();
+<a name="l00138"></a>00138                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#40e7227c6f3b9656e71193bf214ae36e">setSpeedMult</a>(<span class="keywordtype">int</span> sm);
+<a name="l00143"></a>00143                 <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#3cbfd75e01b097d42376be55dcd52abc">getSpeedMult</a>();
+<a name="l00148"></a>00148                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#6ca3eccb1e209770fb960038e00912fc">setFps</a>(<span class="keywordtype">int</span> fps);
+<a name="l00153"></a>00153                 <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#c9f3d689ea837a8c2c4ba97b139f6ecb">getFps</a>();
+<a name="l00159"></a>00159                 <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#7c7ccd78e1dea2fe54099a9a90882f1c">addObject</a>(<a class="code" href="classObject.html">Object</a> &amp;o);
+<a name="l00165"></a>00165                 <span class="keywordtype">bool</span> <a class="code" href="classSimCtrl.html#d16f2bf209c7e6480fd05acc42a2e9c8">delObject</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);
+<a name="l00171"></a>00171                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> A&gt;
+<a name="l00172"></a><a class="code" href="classSimCtrl.html#287bee4362f37d971f1bc20c0d87761f">00172</a>                 A *<a class="code" href="classSimCtrl.html#287bee4362f37d971f1bc20c0d87761f">getObject</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>){
+<a name="l00173"></a>00173                         A *o = (A*) findObject&lt;A&gt;(<span class="keywordtype">id</span>);
+<a name="l00174"></a>00174                         <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(*o) == <span class="keyword">typeid</span>(A))
+<a name="l00175"></a>00175                                 <span class="keywordflow">return</span> o;
+<a name="l00176"></a>00176                         <span class="keywordflow">return</span> NULL;
+<a name="l00177"></a>00177                 }
+<a name="l00182"></a>00182                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#459bf33b8645177f51d45d6037611404">draw</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s);
+<a name="l00187"></a>00187                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#b42a1e61703a5924ad1524d9f1a355d3">runStep</a>(<a class="code" href="classDrawing.html">Drawing</a> &amp;s);
+<a name="l00192"></a>00192                 list&lt;SLevel&gt;* <span class="keyword">const</span> <a class="code" href="classSimCtrl.html#4c6eb81e9fe5f491dbb21ddf6e50570a">getDetections</a>();
+<a name="l00197"></a>00197                 <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="classSimCtrl.html#31a1c03192b8916d86e7a1e084ebbb6c">getSimTime</a>();
+<a name="l00202"></a>00202                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#c488529219dc3e1e5aa7c6b1fd4b5013">setSimTime</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> time);
+<a name="l00207"></a>00207                 list&lt;Event&gt; <span class="keyword">const</span> <a class="code" href="classSimCtrl.html#6e486abc52d39ecdb9d42f0c9fd213c4">getNewEvents</a>();
+<a name="l00212"></a>00212                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#64c42080aed2fc82c3ac7f289086e766">sendEvents</a>(<a class="code" href="classSockServ.html">SockServ</a> &amp;sock);
+<a name="l00218"></a>00218                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#4727c232d4fa6203ada8c6c5659cce9f">addInterrupt</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">int</span> rId);
+<a name="l00224"></a>00224                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#46324ed4e20219c86c11f6d33739506d">delInterrupt</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">int</span> rId);
+<a name="l00230"></a>00230                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#8c40ede588675ab7901739520c741f99">addTimeAlert</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> time);
+<a name="l00236"></a>00236                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#cb85b092193bf4a7a17f45e1e48cae5b">delTimeAlert</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> time);
+<a name="l00241"></a>00241                 <span class="keywordtype">void</span> <a class="code" href="classSimCtrl.html#866cbae097e523d9ee9163a7881f75e2">sendTimeAlert</a>(<a class="code" href="classSockServ.html">SockServ</a> &amp;sock);
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243 };
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

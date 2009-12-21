@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de main.cpp</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>main.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 <span class="preprocessor">#include "drawing.h"</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include "kbddecoder.h"</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include "simctrl.h"</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include "eventmanager.h"</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include "trigtable.h"</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include "<a class="code" href="checkintersect_8h.html">checkintersect.h</a>"</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include "sockserv.h"</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">using namespace </span>std;
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="keywordtype">int</span> main(){
+<a name="l00016"></a>00016         <a class="code" href="classTrigtable.html#d32023bf94e26142d163c863bc1e0a19">Trigtable::generate</a>();
+<a name="l00017"></a>00017         <a class="code" href="classDrawing.html">Drawing</a> *s;
+<a name="l00018"></a>00018         <a class="code" href="classSimCtrl.html">SimCtrl</a> sc;
+<a name="l00019"></a>00019         stringstream evt;
+<a name="l00020"></a>00020         <span class="keywordtype">string</span> resp;
+<a name="l00021"></a>00021         <a class="code" href="classSockServ.html">SockServ</a> socket;
+<a name="l00022"></a>00022         <span class="keywordtype">int</span> cliTmp;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         <span class="comment">// TODO tirar testes</span>
+<a name="l00025"></a>00025         <span class="comment">/* inicio: valores apenas para testes */</span>
+<a name="l00026"></a>00026         <a class="code" href="classRobot.html">Robot</a> r1(1, 0x0000FFFF, 800, 300, 30, 1800, 100, 100);
+<a name="l00027"></a>00027         r1.addSensor(1, 0, 100, 50);
+<a name="l00028"></a>00028         r1.addSensor(2, 450, 100, 50);
+<a name="l00029"></a>00029         r1.addSensor(3, -450, 100, 50);
+<a name="l00030"></a>00030         sc.<a class="code" href="classSimCtrl.html#7c7ccd78e1dea2fe54099a9a90882f1c">addObject</a>(r1);
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         <a class="code" href="classRobot.html">Robot</a> r2(2, 0x00FF00FF, 400, 400, 30, 0, 100, 0);
+<a name="l00033"></a>00033         r2.addSensor(1, 0, 100, 50);
+<a name="l00034"></a>00034         r2.addSensor(2, 450, 100, 50);
+<a name="l00035"></a>00035         r2.addSensor(3, -450, 100, 50);
+<a name="l00036"></a>00036         sc.<a class="code" href="classSimCtrl.html#7c7ccd78e1dea2fe54099a9a90882f1c">addObject</a>(r2);
+<a name="l00037"></a>00037         
+<a name="l00038"></a>00038         <a class="code" href="classPoint2d.html">Point2d</a> v1[3];
+<a name="l00039"></a>00039         v1[0].<a class="code" href="classPoint2d.html#3491ec5f89149b0e91bbb91bc6f4308f">x</a> = 110;
+<a name="l00040"></a>00040         v1[0].<a class="code" href="classPoint2d.html#2626bd0c5cce36fb441a5c1720b2c537">y</a> = 110;
+<a name="l00041"></a>00041         v1[1].<a class="code" href="classPoint2d.html#3491ec5f89149b0e91bbb91bc6f4308f">x</a> = 200;
+<a name="l00042"></a>00042         v1[1].<a class="code" href="classPoint2d.html#2626bd0c5cce36fb441a5c1720b2c537">y</a> = 110;
+<a name="l00043"></a>00043         v1[2].<a class="code" href="classPoint2d.html#3491ec5f89149b0e91bbb91bc6f4308f">x</a> = 200;
+<a name="l00044"></a>00044         v1[2].<a class="code" href="classPoint2d.html#2626bd0c5cce36fb441a5c1720b2c537">y</a> = 600;
+<a name="l00045"></a>00045         <a class="code" href="classObstacle.html">Obstacle</a> o1(3,0xFF000077, 3, v1); 
+<a name="l00046"></a>00046         sc.<a class="code" href="classSimCtrl.html#7c7ccd78e1dea2fe54099a9a90882f1c">addObject</a>(o1);
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048         <span class="comment">/* fim: valores apenas para testes */</span>
+<a name="l00049"></a>00049         <span class="comment">//espera um socket se conectar (espera ocupada)</span>
+<a name="l00050"></a>00050         <span class="keywordflow">while</span> (!socket.<a class="code" href="classSockServ.html#c8a4cc7e224b1785212a6fdcd5e3c554">acceptClient</a>() &amp;&amp; sc.<a class="code" href="classSimCtrl.html#533649a1ee4df5f0993f6fb7b0dd57ac">isRunning</a>()){
+<a name="l00051"></a>00051                 SDL_Delay(200);
+<a name="l00052"></a>00052                 evt &lt;&lt; <a class="code" href="classKbdDecoder.html#085600203785a61dd712d357b2ea581d">KbdDecoder::decodeKbdEvent</a>();
+<a name="l00053"></a>00053                 <a class="code" href="classEventManager.html#dbf66164158c858632197ef3b82d7c19">EventManager::runEvent</a>(evt, sc);
+<a name="l00054"></a>00054                 evt.clear();
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="comment">//espera definir dimensoes do mundo</span>
+<a name="l00058"></a>00058         <span class="keywordflow">while</span> (!sc.<a class="code" href="classSimCtrl.html#d5be47d8f5075ad7ca77b0a08754a988">isStarted</a>() &amp;&amp; sc.<a class="code" href="classSimCtrl.html#533649a1ee4df5f0993f6fb7b0dd57ac">isRunning</a>()){
+<a name="l00059"></a>00059                 SDL_Delay(200);
+<a name="l00060"></a>00060                 evt &lt;&lt; <a class="code" href="classKbdDecoder.html#085600203785a61dd712d357b2ea581d">KbdDecoder::decodeKbdEvent</a>();
+<a name="l00061"></a>00061                 <a class="code" href="classEventManager.html#dbf66164158c858632197ef3b82d7c19">EventManager::runEvent</a>(evt, sc);
+<a name="l00062"></a>00062                 evt.clear();
+<a name="l00063"></a>00063                 socket.<a class="code" href="classSockServ.html#072ec8cfba44f8d011eb6edaeaa591f6">recvStart</a>();
+<a name="l00064"></a>00064                 <span class="keywordflow">while</span> (socket.<a class="code" href="classSockServ.html#f19b5064294dec828d01af563e3b7878">hasNext</a>()){
+<a name="l00065"></a>00065                         evt &lt;&lt; socket.<a class="code" href="classSockServ.html#13d32b33ca20bb3ba15e9dababbeaaf2">recvNext</a>(&amp;cliTmp);
+<a name="l00066"></a>00066                         s = <a class="code" href="classEventManager.html#706380fc09514fffd3a62d9fb0020e44">EventManager::startSim</a>(evt, sc);
+<a name="l00067"></a>00067                         <span class="keywordflow">if</span> (s != NULL)
+<a name="l00068"></a>00068                                 <span class="keywordflow">break</span>;
+<a name="l00069"></a>00069                 }
+<a name="l00070"></a>00070                 evt.clear();
+<a name="l00071"></a>00071         }
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073         <span class="comment">//inicia laco de simulacao</span>
+<a name="l00074"></a>00074         <span class="keywordflow">while</span> (sc.<a class="code" href="classSimCtrl.html#533649a1ee4df5f0993f6fb7b0dd57ac">isRunning</a>()){
+<a name="l00075"></a>00075                 socket.<a class="code" href="classSockServ.html#c8a4cc7e224b1785212a6fdcd5e3c554">acceptClient</a>();
+<a name="l00076"></a>00076                 s-&gt;<a class="code" href="classDrawing.html#88db8447bd39261ba7adbe2db0717d3c">clearScr</a>();
+<a name="l00077"></a>00077                 evt.clear();
+<a name="l00078"></a>00078                 evt &lt;&lt; <a class="code" href="classKbdDecoder.html#085600203785a61dd712d357b2ea581d">KbdDecoder::decodeKbdEvent</a>();
+<a name="l00079"></a>00079                 <a class="code" href="classEventManager.html#dbf66164158c858632197ef3b82d7c19">EventManager::runEvent</a>(evt, sc);
+<a name="l00080"></a>00080                 socket.<a class="code" href="classSockServ.html#072ec8cfba44f8d011eb6edaeaa591f6">recvStart</a>();
+<a name="l00081"></a>00081                 <span class="keywordflow">while</span> (socket.<a class="code" href="classSockServ.html#f19b5064294dec828d01af563e3b7878">hasNext</a>()){
+<a name="l00082"></a>00082                         evt.clear();
+<a name="l00083"></a>00083                         evt &lt;&lt; socket.<a class="code" href="classSockServ.html#13d32b33ca20bb3ba15e9dababbeaaf2">recvNext</a>(&amp;cliTmp);
+<a name="l00084"></a>00084                         resp = <a class="code" href="classEventManager.html#dbf66164158c858632197ef3b82d7c19">EventManager::runEvent</a>(evt, sc, cliTmp);
+<a name="l00085"></a>00085                         <span class="keywordflow">if</span> (resp.size())
+<a name="l00086"></a>00086                                 socket.<a class="code" href="classSockServ.html#dbc9ec753e7f43ab157fe5f81c777f79">sends</a>(resp,cliTmp);
+<a name="l00087"></a>00087                 }
+<a name="l00088"></a>00088                 sc.<a class="code" href="classSimCtrl.html#64c42080aed2fc82c3ac7f289086e766">sendEvents</a>(socket);
+<a name="l00089"></a>00089                 sc.<a class="code" href="classSimCtrl.html#866cbae097e523d9ee9163a7881f75e2">sendTimeAlert</a>(socket);
+<a name="l00090"></a>00090                 sc.<a class="code" href="classSimCtrl.html#b42a1e61703a5924ad1524d9f1a355d3">runStep</a>(*s);
+<a name="l00091"></a>00091                 sc.<a class="code" href="classSimCtrl.html#459bf33b8645177f51d45d6037611404">draw</a>(*s);
+<a name="l00092"></a>00092                 s-&gt;<a class="code" href="classDrawing.html#e6254853f96f616561b33b4b3407bd7e">updateScr</a>();
+<a name="l00093"></a>00093         }
+<a name="l00094"></a>00094 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

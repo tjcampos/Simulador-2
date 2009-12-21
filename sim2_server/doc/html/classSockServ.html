@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe SockServ</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe SockServ</h1><!-- doxytag: class="SockServ" -->
+<p><code>#include &lt;<a class="el" href="sockserv_8h_source.html">sockserv.h</a>&gt;</code></p>
+
+<p><a href="classSockServ-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a9868a23b78ec5eba35547e583835ba00">SockServ</a> (unsigned short port=6703)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a18b87a413bac01b49e89f7d616a14da8">~SockServ</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#ac8a4cc7e224b1785212a6fdcd5e3c554">acceptClient</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a6c8dfc479d51481695b51aabcfd17957">stopAll</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a072ec8cfba44f8d011eb6edaeaa591f6">recvStart</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a13d32b33ca20bb3ba15e9dababbeaaf2">recvNext</a> (int *clientId=NULL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#af19b5064294dec828d01af563e3b7878">hasNext</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#adbc9ec753e7f43ab157fe5f81c777f79">sends</a> (string &amp;msg, int client)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a50811643fbece8832b5962ac96c63c53">sendAll</a> (string &amp;s)</td></tr>
+<tr><td colspan="2"><h2>Métodos Protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a09d35a0e546fc36ef7a8b98d569afbcf">stop</a> (int socket)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a9db92507b709e508d634bee2913c31aa">receive</a> (int socket, char msg[])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSockServ.html#a9799649cf054a9361d5df4caa5ee0050">isActive</a> (int client)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Classe que gerencia os sockets conectados ao servidor </p>
+
+<p>Definição na linha <a class="el" href="sockserv_8h_source.html#l00030">30</a> do arquivo <a class="el" href="sockserv_8h_source.html">sockserv.h</a>.</p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a9868a23b78ec5eba35547e583835ba00"></a><!-- doxytag: member="SockServ::SockServ" ref="a9868a23b78ec5eba35547e583835ba00" args="(unsigned short port=6703)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SockServ::SockServ </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&nbsp;</td>
+          <td class="paramname"> <em>port</em> = <code>6703</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Construtor da classe <a class="el" href="classSockServ.html">SockServ</a> </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>port</em>&nbsp;</td><td>porta a ser utilizada pelo servidor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00003">3</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a18b87a413bac01b49e89f7d616a14da8"></a><!-- doxytag: member="SockServ::~SockServ" ref="a18b87a413bac01b49e89f7d616a14da8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SockServ::~SockServ </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destrutor da classe <a class="el" href="classSockServ.html">SockServ</a> </p>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00035">35</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="ac8a4cc7e224b1785212a6fdcd5e3c554"></a><!-- doxytag: member="SockServ::acceptClient" ref="ac8a4cc7e224b1785212a6fdcd5e3c554" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SockServ::acceptClient </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Checa a porta padrao por novos clientes </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de novo cliente conectado ou false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00039">39</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af19b5064294dec828d01af563e3b7878"></a><!-- doxytag: member="SockServ::hasNext" ref="af19b5064294dec828d01af563e3b7878" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SockServ::hasNext </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica se ha mais sockets a serem verificados </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de mais clientes ou false se alista de clientes chegou ao fim </dd></dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00119">119</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9799649cf054a9361d5df4caa5ee0050"></a><!-- doxytag: member="SockServ::isActive" ref="a9799649cf054a9361d5df4caa5ee0050" args="(int client)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SockServ::isActive </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica se um socket esta ativo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente a ser verificado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso do socket estiver ativo e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00139">139</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9db92507b709e508d634bee2913c31aa"></a><!-- doxytag: member="SockServ::receive" ref="a9db92507b709e508d634bee2913c31aa" args="(int socket, char msg[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SockServ::receive </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>socket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>msg</em>[]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Recebe dados de um socket </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>socket</em>&nbsp;</td><td>cliente que recebera a mensagem </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>msg</em>&nbsp;</td><td>mensagem a ser enviada </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>numero de caracteres recebidos </dd></dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00079">79</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13d32b33ca20bb3ba15e9dababbeaaf2"></a><!-- doxytag: member="SockServ::recvNext" ref="a13d32b33ca20bb3ba15e9dababbeaaf2" args="(int *clientId=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SockServ::recvNext </td>
+          <td>(</td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>clientId</em> = <code>NULL</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Recebe os dados do proximo cliente </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>clientId</em>&nbsp;</td><td>parametro de saida, socket que enviou a mensagem atual </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>mensagem recebida </dd></dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00093">93</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a072ec8cfba44f8d011eb6edaeaa591f6"></a><!-- doxytag: member="SockServ::recvStart" ref="a072ec8cfba44f8d011eb6edaeaa591f6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SockServ::recvStart </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Configura a lista de recebimentos para o primeiro cliente </p>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00089">89</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a50811643fbece8832b5962ac96c63c53"></a><!-- doxytag: member="SockServ::sendAll" ref="a50811643fbece8832b5962ac96c63c53" args="(string &amp;s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SockServ::sendAll </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia uma mensagem para todos os clientes </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>mensagem a ser enviada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00133">133</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbc9ec753e7f43ab157fe5f81c777f79"></a><!-- doxytag: member="SockServ::sends" ref="adbc9ec753e7f43ab157fe5f81c777f79" args="(string &amp;msg, int client)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SockServ::sends </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&nbsp;</td>
+          <td class="paramname"> <em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>client</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Envia uma mensagem ao cliente desejado </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>msg</em>&nbsp;</td><td>mensagem a ser enviada pelo socket </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>client</em>&nbsp;</td><td>cliente a ser enviada a mensagem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00126">126</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09d35a0e546fc36ef7a8b98d569afbcf"></a><!-- doxytag: member="SockServ::stop" ref="a09d35a0e546fc36ef7a8b98d569afbcf" args="(int socket)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SockServ::stop </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>socket</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Fecha um socket </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>socket</em>&nbsp;</td><td>a ser finalizado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00070">70</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c8dfc479d51481695b51aabcfd17957"></a><!-- doxytag: member="SockServ::stopAll" ref="a6c8dfc479d51481695b51aabcfd17957" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SockServ::stopAll </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Disconecta todos os clientes e finaliza a porta padrao </p>
+
+<p>Definição na linha <a class="el" href="sockserv_8cpp_source.html#l00061">61</a> do arquivo <a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="sockserv_8h_source.html">sockserv.h</a></li>
+<li><a class="el" href="sockserv_8cpp_source.html">sockserv.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

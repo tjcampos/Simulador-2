@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe Trigtable</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe Trigtable</h1><!-- doxytag: class="Trigtable" -->
+<p><code>#include &lt;<a class="el" href="trigtable_8h_source.html">trigtable.h</a>&gt;</code></p>
+
+<p><a href="classTrigtable-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos Estáticos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrigtable.html#ad32023bf94e26142d163c863bc1e0a19">generate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrigtable.html#a9f98bf4c0580ad6cfb636253a40e387a">tsin</a> (int x)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrigtable.html#a01b9e5b855a9eaed7c63ca94d0074ca1">tcos</a> (int x)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Classe que possui tabelas com valores matematicos, para acelerar calculos </p>
+
+<p>Definição na linha <a class="el" href="trigtable_8h_source.html#l00017">17</a> do arquivo <a class="el" href="trigtable_8h_source.html">trigtable.h</a>.</p>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="ad32023bf94e26142d163c863bc1e0a19"></a><!-- doxytag: member="Trigtable::generate" ref="ad32023bf94e26142d163c863bc1e0a19" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trigtable::generate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Cria a tabela de senos </p>
+
+<p>Definição na linha <a class="el" href="trigtable_8cpp_source.html#l00007">7</a> do arquivo <a class="el" href="trigtable_8cpp_source.html">trigtable.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01b9e5b855a9eaed7c63ca94d0074ca1"></a><!-- doxytag: member="Trigtable::tcos" ref="a01b9e5b855a9eaed7c63ca94d0074ca1" args="(int x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Trigtable::tcos </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>calcula cosseno valor tabelado </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>valor do anguro em graus </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>valor do cosseno de x </dd></dl>
+
+<p>Definição na linha <a class="el" href="trigtable_8cpp_source.html#l00033">33</a> do arquivo <a class="el" href="trigtable_8cpp_source.html">trigtable.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f98bf4c0580ad6cfb636253a40e387a"></a><!-- doxytag: member="Trigtable::tsin" ref="a9f98bf4c0580ad6cfb636253a40e387a" args="(int x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Trigtable::tsin </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>calcula do seno valor tabelado </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>valor do anguro em graus </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>valor do seno de x </dd></dl>
+
+<p>Definição na linha <a class="el" href="trigtable_8cpp_source.html#l00019">19</a> do arquivo <a class="el" href="trigtable_8cpp_source.html">trigtable.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="trigtable_8h_source.html">trigtable.h</a></li>
+<li><a class="el" href="trigtable_8cpp_source.html">trigtable.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe Robot</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe Robot</h1><!-- doxytag: class="Robot" --><!-- doxytag: inherits="Object" -->
+<p><code>#include &lt;<a class="el" href="robot_8h_source.html">robot.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de Hierarquia para Robot:</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRobot.gif" usemap="#Robot_map" alt=""/>
+  <map id="Robot_map" name="Robot_map">
+<area href="classObject.html" alt="Object" shape="rect" coords="0,0,49,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRobot-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a452297439b807270aeb2ab7704b93a38">Robot</a> (int id, Uint32 color, int posx, int posy, int size, int rot=0, int vl=0, int vr=0, bool enable=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#abeff512903452f6e017af51db8e80a00">setPos</a> (<a class="el" href="classPoint2d.html">Point2d</a> pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint2d.html">Point2d</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a5cd05eca76186d01e5b5cb4a18455940">getPos</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a2b8ca2a5de67f376bd75b8ea88aca347">setSize</a> (int size)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a405c026c516b949f889d27e6292d246e">getSize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a17dcae026a9c691a7d8d2335c11ccdcf">setRot</a> (int rot)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a1c94f64ef207d181d56502503997370f">getRot</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a85dbb34662b60e077ed7d3b2fbc26cb5">setSpeed</a> (int vl, int vr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#af1b4c9280000050ef54a56fa21142272">getSpeed</a> (int &amp;vl, int &amp;vr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a631c08fd3f05239cec83ab4be157416a">draw</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#ae46d92d4d807db1077ff57a4fe5c8deb">runStep</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s, int tick, list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;objects)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a2856d394fbb3adf4694b3ff5ea6d9a83">addSensor</a> (int id, int pos, int length, int width, int rot=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#aac3651453b954b0627400a55bbecafd1">delSensor</a> (int id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a697a5b67590808d72c0911136456dcb0">getSensor</a> (int id, int &amp;pos, int &amp;length, int &amp;width, int &amp;rot)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a9caeac45be0f34b40f88166ba16d3bcb">setSensor</a> (int id, int pos, int length, int width, int rot=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="classSLevel.html">SLevel</a> &gt; const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a090a512f8170ea408555f6cb309cb9da">checkSensors</a> (list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;objects, int max=10, int min=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#acb5788047b46a36dae4a3d6096c7430e">getCollision</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#afeb3d68bc2efcb6cfb77a71910fe598c">getNewEvents</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a4c1a932a3a1570558c1cf50db1cff97f">clearEvents</a> ()</td></tr>
+<tr><td colspan="2"><h2>Métodos Protegidos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a97f0eda04e921bd26cdfb3968a8759db">drawSensor</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="classRSensor.html">RSensor</a> &gt;::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a41acfadcc7d039b605946bbf47bdbb53">findSensor</a> (int id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#aa13c9adf86aced22fd5bf1cb65e8fdc5">isValidPosition</a> (list&lt; <a class="el" href="classObject.html">Object</a> * &gt;::iterator begin, list&lt; <a class="el" href="classObject.html">Object</a> * &gt;::iterator end, <a class="el" href="classPoint2d.html">Point2d</a> pos, int size)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#af6b4bdf672cbd76a9ab3425092a09097">setFineRot</a> (int rot)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Classe <a class="el" href="classRobot.html">Robot</a> (robo) do simulador, deriva de <a class="el" href="classObject.html">Object</a> </p>
+
+<p>Definição na linha <a class="el" href="robot_8h_source.html#l00028">28</a> do arquivo <a class="el" href="robot_8h_source.html">robot.h</a>.</p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a452297439b807270aeb2ab7704b93a38"></a><!-- doxytag: member="Robot::Robot" ref="a452297439b807270aeb2ab7704b93a38" args="(int id, Uint32 color, int posx, int posy, int size, int rot=0, int vl=0, int vr=0, bool enable=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Robot::Robot </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>posx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>posy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>rot</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>vl</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>vr</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Construtor da classe <a class="el" href="classRobot.html">Robot</a> </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do objeto (nao pode ser duplicado e nao pode ser alterado posteriormente) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor do objeto em 0xRRGGBBAA </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posx</em>&nbsp;</td><td>posicao do robo no eixo x </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posy</em>&nbsp;</td><td>posicao do robo no eixo y </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>raio do robo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rot</em>&nbsp;</td><td>angulo de rotacao do robo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>vl</em>&nbsp;</td><td>velocidade da roda direita </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>vr</em>&nbsp;</td><td>velocidade da roda esquerda </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>objeto ativo para simulacao e impressao na tela </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00003">3</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="a2856d394fbb3adf4694b3ff5ea6d9a83"></a><!-- doxytag: member="Robot::addSensor" ref="a2856d394fbb3adf4694b3ff5ea6d9a83" args="(int id, int pos, int length, int width, int rot=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Robot::addSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>rot</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adiciona um sensor ao robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do sensor, deve ser unico entre sensores </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>posicao do sensor em graus em torno do robo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>length</em>&nbsp;</td><td>comprimento do sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>largura do sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rot</em>&nbsp;</td><td>angulo formado entre o sensor e a reta tangente da circunferencia que passa pela origem do sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de sucesso e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00106">106</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a090a512f8170ea408555f6cb309cb9da"></a><!-- doxytag: member="Robot::checkSensors" ref="a090a512f8170ea408555f6cb309cb9da" args="(list&lt; Object * &gt; &amp;objects, int max=10, int min=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list&lt; <a class="el" href="classSLevel.html">SLevel</a> &gt; const Robot::checkSensors </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>objects</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>max</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>min</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica os sensores do Robo atual e executa deteccao com a lista de <a class="el" href="classObject.html">Object</a>. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>objects</em>&nbsp;</td><td>lista de objetos a serem detectados pelo sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max</em>&nbsp;</td><td>valor maximo do sensor, objeto muito proximo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>min</em>&nbsp;</td><td>valor minimo do sensor, objeto muito distante </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>lista com as deteccoes,o valor da deteccao sera um numero entre min e max </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00183">183</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c1a932a3a1570558c1cf50db1cff97f"></a><!-- doxytag: member="Robot::clearEvents" ref="a4c1a932a3a1570558c1cf50db1cff97f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::clearEvents </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Limpa todos os eventos que estao prontos para serem enviados </p>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00214">214</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac3651453b954b0627400a55bbecafd1"></a><!-- doxytag: member="Robot::delSensor" ref="aac3651453b954b0627400a55bbecafd1" args="(int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Robot::delSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deleta o sensor com o id selecionado </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do sensor a ser removido </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de sucesso e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00127">127</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a631c08fd3f05239cec83ab4be157416a"></a><!-- doxytag: member="Robot::draw" ref="a631c08fd3f05239cec83ab4be157416a" args="(Drawing &amp;s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deve ser implementada de forma com que desenhe o objeto na tela, recebe s, uma interface para desenho. FUNCAO VIRTUAL PURA </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>classe que desenha os objetos na tela </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="classObject.html#aaa843497df146afaa721577e582c8ed2">Object</a>.</p>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00072">72</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97f0eda04e921bd26cdfb3968a8759db"></a><!-- doxytag: member="Robot::drawSensor" ref="a97f0eda04e921bd26cdfb3968a8759db" args="(Drawing &amp;s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::drawSensor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Desenha os sensores do robo na tela </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>objeto para desenho na tela </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00114">114</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a41acfadcc7d039b605946bbf47bdbb53"></a><!-- doxytag: member="Robot::findSensor" ref="a41acfadcc7d039b605946bbf47bdbb53" args="(int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">list&lt; <a class="el" href="classRSensor.html">RSensor</a> &gt;::iterator Robot::findSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Encontra um sensor </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do sensor a ser buscado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>iterador para o sensor </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00119">119</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb5788047b46a36dae4a3d6096c7430e"></a><!-- doxytag: member="Robot::getCollision" ref="acb5788047b46a36dae4a3d6096c7430e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Robot::getCollision </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Checa se o robo esta colidindo com algum objeto </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de colisao e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00203">203</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afeb3d68bc2efcb6cfb77a71910fe598c"></a><!-- doxytag: member="Robot::getNewEvents" ref="afeb3d68bc2efcb6cfb77a71910fe598c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Robot::getNewEvents </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Checa novos eventos </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>retorna 1 se houve alteracoes nos sensores e 2 se houve aulteracao na colisao </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00208">208</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5cd05eca76186d01e5b5cb4a18455940"></a><!-- doxytag: member="Robot::getPos" ref="a5cd05eca76186d01e5b5cb4a18455940" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPoint2d.html">Point2d</a> Robot::getPos </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifia a posicao do robo </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>posicao do robo </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00017">17</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c94f64ef207d181d56502503997370f"></a><!-- doxytag: member="Robot::getRot" ref="a1c94f64ef207d181d56502503997370f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Robot::getRot </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica o angulo de rotacao do robo </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>angulo de rotacao do robo </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00068">68</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a697a5b67590808d72c0911136456dcb0"></a><!-- doxytag: member="Robot::getSensor" ref="a697a5b67590808d72c0911136456dcb0" args="(int id, int &amp;pos, int &amp;length, int &amp;width, int &amp;rot)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Robot::getSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>rot</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>recebe informacoes de um sensor do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do sensor a ter informacoes recebidas </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>posicao do sensor em graus em torno do robo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>length</em>&nbsp;</td><td>comprimento do sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>largura do sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rot</em>&nbsp;</td><td>angulo formado entre o sensor e a reta tangente da circunferencia que passa pela origem do sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de sucesso e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00136">136</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a405c026c516b949f889d27e6292d246e"></a><!-- doxytag: member="Robot::getSize" ref="a405c026c516b949f889d27e6292d246e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Robot::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica o diametro do robo </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>diametro do robo </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00025">25</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af1b4c9280000050ef54a56fa21142272"></a><!-- doxytag: member="Robot::getSpeed" ref="af1b4c9280000050ef54a56fa21142272" args="(int &amp;vl, int &amp;vr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::getSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>vl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>vr</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>verifica a velocidade do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vl</em>&nbsp;</td><td>velocidade da roda esquerda </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>vr</em>&nbsp;</td><td>velocidade da roda direita </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00034">34</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa13c9adf86aced22fd5bf1cb65e8fdc5"></a><!-- doxytag: member="Robot::isValidPosition" ref="aa13c9adf86aced22fd5bf1cb65e8fdc5" args="(list&lt; Object * &gt;::iterator begin, list&lt; Object * &gt;::iterator end, Point2d pos, int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Robot::isValidPosition </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="classObject.html">Object</a> * &gt;::iterator&nbsp;</td>
+          <td class="paramname"> <em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="classObject.html">Object</a> * &gt;::iterator&nbsp;</td>
+          <td class="paramname"> <em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a>&nbsp;</td>
+          <td class="paramname"> <em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifica se o a posicao de uma circunferencia nao colide com demais objetos </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>begin</em>&nbsp;</td><td>iterador para o inicio da lista de objetos </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>end</em>&nbsp;</td><td>iterador para o fim da lista de objetos </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>posicao central da circunferencia </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>diametro da circunferencia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de caminho livre, ou false em caso de algo estar bloquando o caminho </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00160">160</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae46d92d4d807db1077ff57a4fe5c8deb"></a><!-- doxytag: member="Robot::runStep" ref="ae46d92d4d807db1077ff57a4fe5c8deb" args="(Drawing &amp;s, int tick, list&lt; Object * &gt; &amp;objects)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::runStep </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>tick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>objects</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>calcula a proxima posicao do robo e checa a validade desta posicao chamando o metodo isValidPosition, em caso de movimento valido executa a operacao </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>classe para desenho do robo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tick</em>&nbsp;</td><td>duracao do frame atual </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>objects</em>&nbsp;</td><td>lista de objetos para checagem de colisao </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00082">82</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6b4bdf672cbd76a9ab3425092a09097"></a><!-- doxytag: member="Robot::setFineRot" ref="af6b4bdf672cbd76a9ab3425092a09097" args="(int rot)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::setFineRot </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>rot</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Trunca o valor do angulo para algo entre 0 e 360 </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rot</em>&nbsp;</td><td>valor atual do angulo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00054">54</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abeff512903452f6e017af51db8e80a00"></a><!-- doxytag: member="Robot::setPos" ref="abeff512903452f6e017af51db8e80a00" args="(Point2d pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::setPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a>&nbsp;</td>
+          <td class="paramname"> <em>pos</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera a posicao do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>nova posicao do robo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00013">13</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17dcae026a9c691a7d8d2335c11ccdcf"></a><!-- doxytag: member="Robot::setRot" ref="a17dcae026a9c691a7d8d2335c11ccdcf" args="(int rot)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::setRot </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>rot</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>muda o angulo de rotacao do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rot</em>&nbsp;</td><td>novo angulo de rotacao do robo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00039">39</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9caeac45be0f34b40f88166ba16d3bcb"></a><!-- doxytag: member="Robot::setSensor" ref="a9caeac45be0f34b40f88166ba16d3bcb" args="(int id, int pos, int length, int width, int rot=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Robot::setSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>rot</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Edita um sensor do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do sensor a ser editado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>posicao do sensor em graus em torno do robo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>length</em>&nbsp;</td><td>comprimento do sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>width</em>&nbsp;</td><td>largura do sensor </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rot</em>&nbsp;</td><td>angulo formado entre o sensor e a reta tangente da circunferencia que passa pela origem do sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>true em caso de sucesso e false caso contrario </dd></dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00148">148</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b8ca2a5de67f376bd75b8ea88aca347"></a><!-- doxytag: member="Robot::setSize" ref="a2b8ca2a5de67f376bd75b8ea88aca347" args="(int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::setSize </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>size</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>muda o diametro do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>novo diametro do robo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00021">21</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a85dbb34662b60e077ed7d3b2fbc26cb5"></a><!-- doxytag: member="Robot::setSpeed" ref="a85dbb34662b60e077ed7d3b2fbc26cb5" args="(int vl, int vr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>vl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>vr</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>muda a velocidade do robo </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>vl</em>&nbsp;</td><td>velocidade da roda esquerda </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>vr</em>&nbsp;</td><td>velocidade da roda direita </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="robot_8cpp_source.html#l00029">29</a> do arquivo <a class="el" href="robot_8cpp_source.html">robot.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="robot_8h_source.html">robot.h</a></li>
+<li><a class="el" href="robot_8cpp_source.html">robot.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

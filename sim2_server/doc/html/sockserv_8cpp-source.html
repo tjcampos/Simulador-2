@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Simulador: Código-Fonte de sockserv.cpp</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Gerado por Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>sockserv.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include "sockserv.h"</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="classSockServ.html#9868a23b78ec5eba35547e583835ba00">00003</a> <a class="code" href="classSockServ.html#9868a23b78ec5eba35547e583835ba00">SockServ::SockServ</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port){
+<a name="l00004"></a>00004         <span class="keywordflow">if</span> ((sock = socket(AF_INET, SOCK_STREAM, 0)) &lt; 0){
+<a name="l00005"></a>00005                 perror(<span class="stringliteral">"ERROR opening socket"</span>);
+<a name="l00006"></a>00006                 <span class="keywordflow">return</span>;
+<a name="l00007"></a>00007         }
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009         bzero((<span class="keywordtype">char</span> *) &amp;serv_addr, <span class="keyword">sizeof</span>(serv_addr));
+<a name="l00010"></a>00010         serv_addr.sin_family = AF_INET;
+<a name="l00011"></a>00011         serv_addr.sin_port = htons(port);
+<a name="l00012"></a>00012         serv_addr.sin_addr.s_addr = INADDR_ANY;
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014         <span class="keywordtype">int</span> on = 1;
+<a name="l00015"></a>00015         fcntl(sock, F_SETFL, O_NONBLOCK);
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017         <span class="keyword">struct </span>protoent *p;
+<a name="l00018"></a>00018         p = getprotobyname(<span class="stringliteral">"tcp"</span>);
+<a name="l00019"></a>00019         <span class="keywordflow">if</span> (setsockopt(sock, p-&gt;p_proto, SO_REUSEADDR | TCP_NODELAY, &amp;on, <span class="keyword">sizeof</span>(on)) &lt; 0){
+<a name="l00020"></a>00020                 perror(<span class="stringliteral">"ERROR setting up socket options"</span>);
+<a name="l00021"></a>00021         }
+<a name="l00022"></a>00022         
+<a name="l00023"></a>00023         <span class="keywordflow">if</span> (bind(sock, (<span class="keyword">struct</span> sockaddr *) &amp;serv_addr, <span class="keyword">sizeof</span>(serv_addr)) &lt; 0){ 
+<a name="l00024"></a>00024                 perror(<span class="stringliteral">"ERROR on binding"</span>);
+<a name="l00025"></a>00025                 <span class="keywordflow">return</span>;
+<a name="l00026"></a>00026         }
+<a name="l00027"></a>00027         <span class="keywordflow">if</span> (listen(sock, 1) &lt; 0){
+<a name="l00028"></a>00028                 perror(<span class="stringliteral">"ERROR listening"</span>);
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030         <span class="keywordflow">else</span>{
+<a name="l00031"></a>00031                 cout &lt;&lt; <span class="stringliteral">"Servidor escutando na porta "</span> &lt;&lt; port &lt;&lt; endl;
+<a name="l00032"></a>00032         }
+<a name="l00033"></a>00033 }
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="classSockServ.html#18b87a413bac01b49e89f7d616a14da8">00035</a> <a class="code" href="classSockServ.html#18b87a413bac01b49e89f7d616a14da8">SockServ::~SockServ</a>(){
+<a name="l00036"></a>00036         <a class="code" href="classSockServ.html#6c8dfc479d51481695b51aabcfd17957">stopAll</a>();
+<a name="l00037"></a>00037 }
+<a name="l00038"></a>00038 
+<a name="l00039"></a><a class="code" href="classSockServ.html#c8a4cc7e224b1785212a6fdcd5e3c554">00039</a> <span class="keywordtype">bool</span> <a class="code" href="classSockServ.html#c8a4cc7e224b1785212a6fdcd5e3c554">SockServ::acceptClient</a>(){
+<a name="l00040"></a>00040         <span class="keywordtype">int</span> usrSock;
+<a name="l00041"></a>00041         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> clilen;
+<a name="l00042"></a>00042         <span class="keyword">struct </span>sockaddr_in cli_addr;
+<a name="l00043"></a>00043         clilen = <span class="keyword">sizeof</span>(cli_addr);
+<a name="l00044"></a>00044         <span class="keywordflow">if</span> ((usrSock = accept(sock, (<span class="keyword">struct</span> sockaddr *) &amp;cli_addr, &amp;clilen)) &gt;= 0) {
+<a name="l00045"></a>00045                 cout &lt;&lt; <span class="stringliteral">"Conexao iniciada em: "</span> &lt;&lt; inet_ntoa(cli_addr.sin_addr) &lt;&lt; <span class="stringliteral">":"</span> &lt;&lt; ntohs(cli_addr.sin_port) &lt;&lt; endl;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047                 <span class="keywordtype">int</span> on = 1;
+<a name="l00048"></a>00048                 fcntl(usrSock, F_SETFL, O_NONBLOCK);
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050                 <span class="keyword">struct </span>protoent *p;
+<a name="l00051"></a>00051                 p = getprotobyname(<span class="stringliteral">"tcp"</span>);
+<a name="l00052"></a>00052                 <span class="keywordflow">if</span> (setsockopt(usrSock, p-&gt;p_proto, SO_REUSEADDR | TCP_NODELAY, &amp;on, <span class="keyword">sizeof</span>(on)) &lt; 0){
+<a name="l00053"></a>00053                         perror(<span class="stringliteral">"ERROR setting up socket options"</span>);
+<a name="l00054"></a>00054                 }
+<a name="l00055"></a>00055                 clients.push_front(usrSock);
+<a name="l00056"></a>00056                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00057"></a>00057         }
+<a name="l00058"></a>00058         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="classSockServ.html#6c8dfc479d51481695b51aabcfd17957">00061</a> <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#6c8dfc479d51481695b51aabcfd17957">SockServ::stopAll</a>(){
+<a name="l00062"></a>00062         <span class="keywordflow">for</span>(list&lt;int&gt;::iterator it = clients.begin(); it != clients.end(); it++){
+<a name="l00063"></a>00063                 <a class="code" href="classSockServ.html#09d35a0e546fc36ef7a8b98d569afbcf">stop</a>(*it);
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065         close(sock);
+<a name="l00066"></a>00066         clients.clear();
+<a name="l00067"></a>00067         fcntl(sock, F_SETFL, O_NONBLOCK);
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="classSockServ.html#09d35a0e546fc36ef7a8b98d569afbcf">00070</a> <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#09d35a0e546fc36ef7a8b98d569afbcf">SockServ::stop</a>(<span class="keywordtype">int</span> socket){
+<a name="l00071"></a>00071         sockaddr_in addr;
+<a name="l00072"></a>00072         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> addr_len = <span class="keyword">sizeof</span>(addr);
+<a name="l00073"></a>00073         getsockname(socket, (sockaddr *) &amp;addr, (socklen_t *) &amp;addr_len);
+<a name="l00074"></a>00074         close(socket);
+<a name="l00075"></a>00075         fcntl(socket, F_SETFL, O_NONBLOCK);
+<a name="l00076"></a>00076         cout &lt;&lt; <span class="stringliteral">"Conexao finalizada em: "</span> &lt;&lt; inet_ntoa(addr.sin_addr) &lt;&lt; <span class="stringliteral">":"</span> &lt;&lt; ntohs(addr.sin_port) &lt;&lt; endl;
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="classSockServ.html#9db92507b709e508d634bee2913c31aa">00079</a> <span class="keywordtype">int</span> <a class="code" href="classSockServ.html#9db92507b709e508d634bee2913c31aa">SockServ::receive</a>(<span class="keywordtype">int</span> socket, <span class="keywordtype">char</span> buffer[]){
+<a name="l00080"></a>00080         <span class="keywordtype">int</span> r = recv(socket, buffer, 1024, 0);
+<a name="l00081"></a>00081         <span class="keywordflow">if</span> (r &gt; 0) {
+<a name="l00082"></a>00082                 buffer[r] = <span class="charliteral">'\0'</span>;
+<a name="l00083"></a>00083         }
+<a name="l00084"></a>00084         <span class="keywordflow">return</span> r;
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00087"></a><a class="code" href="classSockServ.html#072ec8cfba44f8d011eb6edaeaa591f6">00087</a> <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#072ec8cfba44f8d011eb6edaeaa591f6">SockServ::recvStart</a>(){
+<a name="l00088"></a>00088         recvClient = clients.begin();
+<a name="l00089"></a>00089 }
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="classSockServ.html#13d32b33ca20bb3ba15e9dababbeaaf2">00091</a> <span class="keywordtype">string</span> <a class="code" href="classSockServ.html#13d32b33ca20bb3ba15e9dababbeaaf2">SockServ::recvNext</a>(<span class="keywordtype">int</span> *clientId){
+<a name="l00092"></a>00092         <span class="keywordtype">string</span> msgs;
+<a name="l00093"></a>00093         <span class="keywordtype">char</span> tmp[1024] = <span class="stringliteral">""</span>;
+<a name="l00094"></a>00094         <span class="keywordtype">int</span> r;
+<a name="l00095"></a>00095         <span class="keywordflow">if</span> (recvClient != clients.end()){
+<a name="l00096"></a>00096                 <span class="keywordflow">if</span> ((r = <a class="code" href="classSockServ.html#9db92507b709e508d634bee2913c31aa">receive</a>(*recvClient, tmp)) &gt; 0){
+<a name="l00097"></a>00097                         msgs += tmp;
+<a name="l00098"></a>00098                         <span class="keywordflow">if</span> (clientId != NULL)
+<a name="l00099"></a>00099                                 *clientId = *recvClient;
+<a name="l00100"></a>00100                         <span class="keywordflow">return</span> msgs;
+<a name="l00101"></a>00101                 }
+<a name="l00102"></a>00102                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r == 0){
+<a name="l00103"></a>00103                         <a class="code" href="classSockServ.html#09d35a0e546fc36ef7a8b98d569afbcf">stop</a>(*recvClient);
+<a name="l00104"></a>00104                         clients.erase(recvClient);
+<a name="l00105"></a>00105                         recvClient = clients.begin();
+<a name="l00106"></a>00106                 }
+<a name="l00107"></a>00107                 recvClient++;
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109         <span class="keywordflow">return</span> msgs;
+<a name="l00110"></a>00110 }
+<a name="l00111"></a>00111 
+<a name="l00112"></a><a class="code" href="classSockServ.html#f19b5064294dec828d01af563e3b7878">00112</a> <span class="keywordtype">bool</span> <a class="code" href="classSockServ.html#f19b5064294dec828d01af563e3b7878">SockServ::hasNext</a>(){
+<a name="l00113"></a>00113         <span class="keywordflow">if</span> (recvClient != clients.end())
+<a name="l00114"></a>00114                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00115"></a>00115         <span class="keywordflow">else</span>
+<a name="l00116"></a>00116                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00117"></a>00117 }
+<a name="l00118"></a>00118 
+<a name="l00119"></a><a class="code" href="classSockServ.html#dbc9ec753e7f43ab157fe5f81c777f79">00119</a> <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#dbc9ec753e7f43ab157fe5f81c777f79">SockServ::sends</a>(<span class="keywordtype">string</span> &amp;msg, <span class="keywordtype">int</span> client){
+<a name="l00120"></a>00120         <span class="keywordtype">char</span> buffer;
+<a name="l00121"></a>00121         msg += <span class="stringliteral">"\n"</span>;
+<a name="l00122"></a>00122         <span class="keywordflow">if</span> (<a class="code" href="classSockServ.html#9799649cf054a9361d5df4caa5ee0050">isActive</a>(client))
+<a name="l00123"></a>00123                 send(client, msg.c_str(), msg.size(), 0);
+<a name="l00124"></a>00124 }
+<a name="l00125"></a>00125 
+<a name="l00126"></a><a class="code" href="classSockServ.html#50811643fbece8832b5962ac96c63c53">00126</a> <span class="keywordtype">void</span> <a class="code" href="classSockServ.html#50811643fbece8832b5962ac96c63c53">SockServ::sendAll</a>(<span class="keywordtype">string</span> &amp;s){
+<a name="l00127"></a>00127         <span class="keywordflow">for</span>(list&lt;int&gt;::iterator it = clients.begin(); it != clients.end(); it++){
+<a name="l00128"></a>00128                 <a class="code" href="classSockServ.html#dbc9ec753e7f43ab157fe5f81c777f79">sends</a>(s,*it);
+<a name="l00129"></a>00129         }
+<a name="l00130"></a>00130 }
+<a name="l00131"></a>00131 
+<a name="l00132"></a><a class="code" href="classSockServ.html#9799649cf054a9361d5df4caa5ee0050">00132</a> <span class="keywordtype">bool</span> <a class="code" href="classSockServ.html#9799649cf054a9361d5df4caa5ee0050">SockServ::isActive</a>(<span class="keywordtype">int</span> client){
+<a name="l00133"></a>00133         <span class="keywordtype">char</span> buffer;
+<a name="l00134"></a>00134         <span class="keywordflow">if</span> (recv(client, &amp;buffer, 1, MSG_PEEK) != 0)
+<a name="l00135"></a>00135                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00136"></a>00136         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00137"></a>00137 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Gerado em Sat Aug 9 01:53:39 2008 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

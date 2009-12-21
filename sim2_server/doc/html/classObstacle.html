@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Simulador: Referência da Classe Obstacle</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;de&nbsp;Componentes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarquia&nbsp;de&nbsp;Classes</span></a></li>
+      <li><a href="functions.html"><span>Componentes&nbsp;Membros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Classe Obstacle</h1><!-- doxytag: class="Obstacle" --><!-- doxytag: inherits="Object" -->
+<p><code>#include &lt;<a class="el" href="obstacle_8h_source.html">obstacle.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de Hierarquia para Obstacle:</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classObstacle.gif" usemap="#Obstacle_map" alt=""/>
+  <map id="Obstacle_map" name="Obstacle_map">
+<area href="classObject.html" alt="Object" shape="rect" coords="0,0,62,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classObstacle-members.html">Lista de todos os Membros.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Métodos Públicos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObstacle.html#a5de21dc9025676ebdf61ccdd2f5a8fb9">Obstacle</a> (int id, Uint32 color, int nvertices, <a class="el" href="classPoint2d.html">Point2d</a> *vertices, bool enable=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObstacle.html#a9784d5f77a708031d4b57ad7ba99349d">getNVertices</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint2d.html">Point2d</a> const *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObstacle.html#af67faa77bef0b0f1cf1827259911ac7f">getVertices</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObstacle.html#a86cd597adb06270bd4be3959525a48ab">setVertices</a> (int nvertices, <a class="el" href="classPoint2d.html">Point2d</a> *vertices)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObstacle.html#a660193cb4c4a96061ccabac749a19030">draw</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObstacle.html#a061291c5eafdc613a2c8a70fc083ba1f">runStep</a> (<a class="el" href="classDrawing.html">Drawing</a> &amp;s, int tick, list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;objects)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Descrição Detalhada</h2>
+<p>Obstaculo da simulacao </p>
+
+<p>Definição na linha <a class="el" href="obstacle_8h_source.html#l00022">22</a> do arquivo <a class="el" href="obstacle_8h_source.html">obstacle.h</a>.</p>
+<hr/><h2>Construtores &amp; Destrutores</h2>
+<a class="anchor" id="a5de21dc9025676ebdf61ccdd2f5a8fb9"></a><!-- doxytag: member="Obstacle::Obstacle" ref="a5de21dc9025676ebdf61ccdd2f5a8fb9" args="(int id, Uint32 color, int nvertices, Point2d *vertices, bool enable=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Obstacle::Obstacle </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint32&nbsp;</td>
+          <td class="paramname"> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nvertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a> *&nbsp;</td>
+          <td class="paramname"> <em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Construtor da classe <a class="el" href="classObstacle.html">Obstacle</a>, cria um objeto inanimado na tela e que os demais objetos podem colidir </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>id do obstaculo (nao pode ser duplicado e nao pode ser alterado posteriormente) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>cor do objeto em 0xRRGGBBAA </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nvertices</em>&nbsp;</td><td>numero de vertices do objeto </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>*vertices</em>&nbsp;</td><td>vetor com os pontos do cada vertice </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>enable</em>&nbsp;</td><td>objeto ativo para simulacao e impressao na tela </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="obstacle_8cpp_source.html#l00003">3</a> do arquivo <a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Métodos</h2>
+<a class="anchor" id="a660193cb4c4a96061ccabac749a19030"></a><!-- doxytag: member="Obstacle::draw" ref="a660193cb4c4a96061ccabac749a19030" args="(Drawing &amp;s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obstacle::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Desenha o obstaculo na tela, parametros </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>interface com metodos para desenho </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="classObject.html#aaa843497df146afaa721577e582c8ed2">Object</a>.</p>
+
+<p>Definição na linha <a class="el" href="obstacle_8cpp_source.html#l00023">23</a> do arquivo <a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9784d5f77a708031d4b57ad7ba99349d"></a><!-- doxytag: member="Obstacle::getNVertices" ref="a9784d5f77a708031d4b57ad7ba99349d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Obstacle::getNVertices </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="return"><dt><b>Retorna:</b></dt><dd>numero de vertices do objeto </dd></dl>
+
+<p>Definição na linha <a class="el" href="obstacle_8cpp_source.html#l00008">8</a> do arquivo <a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af67faa77bef0b0f1cf1827259911ac7f"></a><!-- doxytag: member="Obstacle::getVertices" ref="af67faa77bef0b0f1cf1827259911ac7f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPoint2d.html">Point2d</a> const * Obstacle::getVertices </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="return"><dt><b>Retorna:</b></dt><dd>lista com os pontos de cada vertice do objeto </dd></dl>
+
+<p>Definição na linha <a class="el" href="obstacle_8cpp_source.html#l00012">12</a> do arquivo <a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a061291c5eafdc613a2c8a70fc083ba1f"></a><!-- doxytag: member="Obstacle::runStep" ref="a061291c5eafdc613a2c8a70fc083ba1f" args="(Drawing &amp;s, int tick, list&lt; Object * &gt; &amp;objects)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obstacle::runStep </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDrawing.html">Drawing</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>tick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="classObject.html">Object</a> * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>objects</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Executa uma etapa da simulacao, uma vez que um objeto nao se move, a funcao fica em branco </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>classe que desenha os objetos na tela </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tick</em>&nbsp;</td><td>duracao do frame atual </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>objects</em>&nbsp;</td><td>lista de objetos, para verificacao de colisao </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="obstacle_8cpp_source.html#l00021">21</a> do arquivo <a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86cd597adb06270bd4be3959525a48ab"></a><!-- doxytag: member="Obstacle::setVertices" ref="a86cd597adb06270bd4be3959525a48ab" args="(int nvertices, Point2d *vertices)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obstacle::setVertices </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nvertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPoint2d.html">Point2d</a> *&nbsp;</td>
+          <td class="paramname"> <em>vertices</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Altera a forma do poligono, parametros: </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>nvertices</em>&nbsp;</td><td>numero de vertices do novo poligono </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>vertices</em>&nbsp;</td><td>vetor com os pontos de cada vertice </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definição na linha <a class="el" href="obstacle_8cpp_source.html#l00016">16</a> do arquivo <a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
+<li><a class="el" href="obstacle_8h_source.html">obstacle.h</a></li>
+<li><a class="el" href="obstacle_8cpp_source.html">obstacle.cpp</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Gerado em Mon Nov 2 16:03:38 2009 para Simulador por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>
