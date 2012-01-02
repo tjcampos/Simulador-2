@@ -204,7 +204,8 @@ vector<int> Sim::getRobotDetections(int id){
 		pos = resp.find(' ', pos) +1;
 		if (pos != 0) pos = resp.find(' ', pos +1) +1;
 		if (pos != 0) pos = resp.find(' ', pos +1) +1;
-		s[sId] = level;
+		if (level)
+			s[sId] = level;
 	}
 	
 	return s;
